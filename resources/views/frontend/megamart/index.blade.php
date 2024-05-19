@@ -97,7 +97,7 @@
         $flash_deal_bg = get_setting('flash_deal_bg_color');
         $flash_deal_bg_full_width = (get_setting('flash_deal_bg_full_width') == 1) ? true : false;
         $flash_deal_banner_menu_text = ((get_setting('flash_deal_banner_menu_text') == 'dark') ||  (get_setting('flash_deal_banner_menu_text') == null)) ? 'text-dark' : 'text-white';
-        
+
     @endphp
     @if ($flash_deal != null)
         <section class="mb-2 mb-md-3 mt-2 mt-md-3" style="background: {{ ($flash_deal_bg_full_width && $flash_deal_bg != null) ? $flash_deal_bg : '' }};" id="flash_deal">
@@ -137,7 +137,7 @@
                                 style="background-image: url('{{ uploaded_asset($flash_deal->banner) }}'); background-size: cover; background-position: center center;">
                             </div>
                         </div>
-                        
+
                         <div class="col-xxl-10 col-md-9 col-sm-8 col-7">
                             <!-- Flash Deals Products -->
                             @php
@@ -233,7 +233,7 @@
     @endif
 
     <!-- Best Selling, New Products, Banner section 2 -->
-    @php 
+    @php
         $homeBanner3Images = get_setting('home_banner3_images', null, $lang);
         $col_val = 6;
         if ($homeBanner3Images != null){
@@ -245,17 +245,17 @@
             <div class="col-xl-{{ $col_val }} mb-2 mb-md-3 mt-2 mt-md-3">
                 <!-- Best Selling  -->
                 <div id="section_best_selling">
-    
+
                 </div>
             </div>
 
             <div class="col-xl-{{ $col_val }} mb-2 mb-md-3 mt-2 mt-md-3">
                 <!-- New Products -->
                 <div id="section_newest">
-    
+
                 </div>
             </div>
-            
+
             <!-- Banner section 3 -->
             @if ($homeBanner3Images != null)
                 <div class="col-xl-4 mb-2 mb-md-3 mt-2 mt-md-3 d-none d-xl-block">
@@ -384,7 +384,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
@@ -415,7 +415,7 @@
                 $data_rows = 3;
                 $xxl_items = 2;
                 $xl_items = 3;
-            } 
+            }
         @endphp
         <section class="mb-2 mb-md-3 mt-2 mt-md-3">
             <div class="container">
@@ -458,7 +458,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Banner section 5 -->
                     @if ($homeBanner5Images != null)
                         @php
@@ -482,7 +482,7 @@
                             </div>
                         </div>
                     @endif
-                    
+
                     <!-- Banner section 6 -->
                     @if ($homeBanner6Images != null)
                         @php
@@ -505,7 +505,7 @@
                             </div>
                         </div>
                     @endif
-                    
+
                 </div>
             </div>
         </section>

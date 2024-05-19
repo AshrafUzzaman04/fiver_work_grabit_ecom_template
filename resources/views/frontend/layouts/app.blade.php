@@ -801,7 +801,7 @@
 
     <script>
         function showFloatingButtons() {
-            document.querySelector('.floating-buttons-section').classList.toggle('show');;
+            document.querySelector('.floating-buttons-section').classList.toggle('show');
         }
     </script>
 

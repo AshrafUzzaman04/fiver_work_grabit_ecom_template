@@ -13,7 +13,7 @@
                 <img src="{{ $topbar_banner_asset }}" class="d-none d-xl-block img-fit h-100" alt="{{ translate('topbar_banner') }}">
                 <!-- For Medium device -->
                 <img src="{{ $topbar_banner_medium != null ? uploaded_asset($topbar_banner_medium) : $topbar_banner_asset }}"
-                    class="d-none d-md-block d-xl-none img-fit h-100" alt="{{ translate('topbar_banner') }}"> 
+                    class="d-none d-md-block d-xl-none img-fit h-100" alt="{{ translate('topbar_banner') }}">
                 <!-- For Small device -->
                 <img src="{{ $topbar_banner_small != null ? uploaded_asset($topbar_banner_small) : $topbar_banner_asset }}"
                     class="d-md-none img-fit h-100" alt="{{ translate('topbar_banner') }}">
@@ -34,7 +34,7 @@
                         <!-- Language switcher -->
                         @if (get_setting('show_language_switcher') == 'on')
                             <li class="list-inline-item dropdown mr-4" id="lang-change">
-                                
+
                                 <a href="javascript:void(0)" class="dropdown-toggle text-secondary fs-12 py-2"
                                     data-toggle="dropdown" data-display="static">
                                     <span class="">{{ $system_language->name }}</span>
