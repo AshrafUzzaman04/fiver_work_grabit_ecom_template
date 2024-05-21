@@ -4,16 +4,16 @@
             <!-- Banner -->
             @if (get_setting('todays_deal_banner') != null || get_setting('todays_deal_banner_small') != null)
                 <div class="overflow-hidden d-none d-md-block">
-                    <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" 
-                        data-src="{{ uploaded_asset(get_setting('todays_deal_banner')) }}" 
-                        alt="{{ env('APP_NAME') }} promo" class="lazyload img-fit h-100 has-transition" 
-                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';">
+                    <img src="{{ asset('assets/img/placeholder-rect.jpg') }}"
+                        data-src="{{ uploaded_asset(get_setting('todays_deal_banner')) }}"
+                        alt="{{ env('APP_NAME') }} promo" class="lazyload img-fit h-100 has-transition"
+                        onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder-rect.jpg') }}';">
                 </div>
                 <div class="overflow-hidden d-md-none">
-                    <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" 
-                        data-src="{{ get_setting('todays_deal_banner_small') != null ? uploaded_asset(get_setting('todays_deal_banner_small')) : uploaded_asset(get_setting('todays_deal_banner')) }}" 
-                        alt="{{ env('APP_NAME') }} promo" class="lazyload img-fit h-100 has-transition" 
-                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';">
+                    <img src="{{ asset('assets/img/placeholder-rect.jpg') }}"
+                        data-src="{{ get_setting('todays_deal_banner_small') != null ? uploaded_asset(get_setting('todays_deal_banner_small')) : uploaded_asset(get_setting('todays_deal_banner')) }}"
+                        alt="{{ env('APP_NAME') }} promo" class="lazyload img-fit h-100 has-transition"
+                        onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder-rect.jpg') }}';">
                 </div>
             @endif
             <!-- Products -->
@@ -33,10 +33,10 @@
                                         <!-- Image -->
                                         <div class="img h-80px w-80px rounded-content overflow-hidden mx-auto">
                                             <img class="lazyload img-fit m-auto has-transition"
-                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                src="{{ asset('assets/img/placeholder.jpg') }}"
                                                 data-src="{{ get_image($product->thumbnail) }}"
                                                 alt="{{ $product->getTranslation('name') }}"
-                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                         </div>
                                         <!-- Price -->
                                         <div class="fs-14 mt-3 text-center">

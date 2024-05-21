@@ -17,10 +17,10 @@
                                 <div class="w-sm-260px h-260px mx-auto">
                                     <a href="{{ route('products.category', $category->slug) }}" class="d-block h-100 w-100 w-xl-auto hov-scale-img overflow-hidden home-category-banner">
                                         <span class="position-absolute h-100 w-100 overflow-hidden">
-                                            <img src="{{ isset($category->coverImage->file_name) ? my_asset($category->coverImage->file_name) : static_asset('assets/img/placeholder.jpg') }}"
+                                            <img src="{{ isset($category->coverImage->file_name) ? asset($category->coverImage->file_name) : asset('assets/img/placeholder.jpg') }}"
                                                 alt="{{ $category_name }}"
                                                 class="img-fit h-100 has-transition"
-                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                         </span>
                                         <span class="home-category-name fs-15 fw-600 text-white text-center">
                                             <span class="">{{ $category_name }}</span>

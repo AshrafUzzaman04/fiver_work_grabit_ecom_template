@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Add New Product -->
         <div class="col-md-4 mx-auto mb-4" >
             <a href="{{ route('customer_products.create')}}">
@@ -41,7 +41,7 @@
               </div>
             </a>
         </div>
-        
+
         <!-- Current Package -->
         @php
             $customer_package = get_single_customer_package(Auth::user()->customer_package_id);
@@ -89,10 +89,10 @@
                         <td class="text-dark" style="vertical-align: middle;">
                             <a href="{{ route('customer.product', $product->slug) }}" class="text-reset hov-text-primary d-flex align-items-center">
                                 <img class="lazyload img-fit size-70px"
-                                    src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                    src="{{ asset('assets/img/placeholder.jpg') }}"
                                     data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                     alt="{{  $product->getTranslation('name')  }}"
-                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                 <span class="ml-1">{{ $product->name }}</span>
                             </a>
                         </td>

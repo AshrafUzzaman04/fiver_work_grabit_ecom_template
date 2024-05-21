@@ -11,18 +11,18 @@
                         @foreach ($photos as $key => $photo)
                         <div class="carousel-box img-zoom rounded-0">
                             <img class="img-fluid lazyload"
-                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                src="{{ asset('assets/img/placeholder.jpg') }}"
                                 data-src="{{ uploaded_asset($photo) }}"
-                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                         </div>
                         @endforeach
                         @foreach ($product->stocks as $key => $stock)
                             @if ($stock->image != null)
                                 <div class="carousel-box img-zoom rounded-0">
                                     <img class="img-fluid lazyload"
-                                        src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                        src="{{ asset('assets/img/placeholder.jpg') }}"
                                         data-src="{{ uploaded_asset($stock->image) }}"
-                                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                        onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                 </div>
                             @endif
                         @endforeach
@@ -33,18 +33,18 @@
                         @foreach ($photos as $key => $photo)
                         <div class="carousel-box c-pointer border rounded-0">
                             <img class="lazyload mw-100 size-60px mx-auto"
-                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                src="{{ asset('assets/img/placeholder.jpg') }}"
                                 data-src="{{ uploaded_asset($photo) }}"
-                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                         </div>
                         @endforeach
                         @foreach ($product->stocks as $key => $stock)
                             @if ($stock->image != null)
                                 <div class="carousel-box c-pointer border rounded-0" data-variation="{{ $stock->variant }}">
                                     <img class="lazyload mw-100 size-50px mx-auto"
-                                        src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                        src="{{ asset('assets/img/placeholder.jpg') }}"
                                         data-src="{{ uploaded_asset($stock->image) }}"
-                                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                        onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                 </div>
                             @endif
                         @endforeach
@@ -130,7 +130,7 @@
                 <form id="option-choice-form">
                     @csrf
                     <input type="hidden" name="id" value="{{ $product->id }}">
-                    
+
                     @if($product->digital !=1)
                         <!-- Product Choice options -->
                         @if ($product->choice_options != null)
@@ -218,7 +218,7 @@
                         <!-- Quantity -->
                         <input type="hidden" name="quantity" value="1">
                     @endif
-                    
+
                     <!-- Total Price -->
                     <div class="row no-gutters mt-3 pb-3 d-none" id="chosen_price_div">
                         <div class="col-3">
@@ -238,7 +238,7 @@
                 <!-- Add to cart -->
                 <div class="mt-3">
                     @if ($product->digital == 1)
-                        <button type="button" class="btn btn-primary rounded-0 buy-now fw-600 add-to-cart" 
+                        <button type="button" class="btn btn-primary rounded-0 buy-now fw-600 add-to-cart"
                             @if (Auth::check() || get_Setting('guest_checkout_activation') == 1) onclick="addToCart()" @else onclick="showLoginModal()" @endif
                         >
                             <i class="la la-shopping-cart"></i>

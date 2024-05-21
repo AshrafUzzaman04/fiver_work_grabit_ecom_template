@@ -145,7 +145,7 @@ class AizUploadController extends Controller
 
                 // Get the MIME type of the file
                 $file_mime = finfo_file($finfo, base_path('public/') . $path);
-                
+
                 if ($type[$extension] == 'image' && get_setting('disable_image_optimization') != 1) {
                     try {
                         $img = Image::make($request->file('aiz_file')->getRealPath())->encode();
@@ -166,7 +166,7 @@ class AizUploadController extends Controller
                     } catch (\Exception $e) {
                         //dd($e);
                     }
-                } 
+                }
                 // elseif ($type[$extension] == 'image' && get_setting('disable_image_optimization') == 1) {
                 //     try {
                 //         $img = Image::make($request->file('aiz_file')->getRealPath())->encode();
@@ -300,7 +300,7 @@ class AizUploadController extends Controller
         $files = Upload::whereIn('id', $ids)->get();
         $new_file_array = [];
         foreach ($files as $file) {
-            $file['file_name'] = my_asset($file->file_name);
+            $file['file_name'] = asset($file->file_name);
             if ($file->external_link) {
                 $file['file_name'] = $file->external_link;
             }

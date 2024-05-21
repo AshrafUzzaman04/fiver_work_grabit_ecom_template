@@ -385,7 +385,7 @@
                         <h5 class="mb-0 h6">{{ translate('Frequently Brought') }}</h5>
                     </div>
                     <div class="w-100">
-                        <div class="d-flex my-3"> 
+                        <div class="d-flex my-3">
                             <div class="align-items-center d-flex mar-btm ml-4 mr-5 radio">
                                 <input id="fq_brought_select_products" type="radio" name="frequently_brought_selection_type" value="product" onchange="fq_brought_product_selection_type()" checked >
                                 <label for="fq_brought_select_products" class="fs-14 fw-500 mb-0 ml-2">{{translate('Select Product')}}</label>
@@ -400,20 +400,20 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="fq_brought_select_product_div">
-    
+
                                         <div id="selected-fq-brought-products">
-    
+
                                         </div>
-    
-                                        <button 
-                                            type="button" 
+
+                                        <button
+                                            type="button"
                                             class="btn btn-block border border-dashed hov-bg-soft-secondary fs-14 rounded-0 d-flex align-items-center justify-content-center"
                                             onclick="showFqBroughtProductModal()">
                                             <i class="las la-plus"></i>
                                             <span class="ml-2">{{ translate('Add More') }}</span>
                                         </button>
                                     </div>
-    
+
                                     {{-- Select Category for Frequently Brought Product --}}
                                     <div class="fq_brought_select_category_div d-none">
                                         <div class="form-group row">
@@ -430,7 +430,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -668,7 +668,7 @@
 
 @section('script')
 <!-- Treeview js -->
-<script src="{{ static_asset('assets/js/hummingbird-treeview.js') }}"></script>
+<script src="{{ asset('assets/js/hummingbird-treeview.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {

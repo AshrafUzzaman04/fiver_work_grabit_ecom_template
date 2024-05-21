@@ -43,7 +43,7 @@
                 <button type="submit" class="btn btn-primary">{{ translate('Search') }}</button>
             </div>
         </div>
-    
+
 		<div class="card-body">
 			<div class="form-group">
 				<div class="aiz-checkbox-inline">
@@ -63,11 +63,11 @@
 						}else{
 							$file_name = $file->file_original_name;
 						}
-						$file_path = my_asset($file->file_name);
+						$file_path = asset($file->file_name);
 						if($file->external_link) {
 							$file_path = $file->external_link;
 						}
-						
+
 					@endphp
 					<div class="col-auto w-140px w-lg-220px">
 						<div class="aiz-file-box">
@@ -80,11 +80,11 @@
 										<i class="las la-info-circle mr-2"></i>
 										<span>{{ translate('Details Info') }}</span>
 									</a>
-									<a href="{{ my_asset($file->file_name) }}" target="_blank" download="{{ $file_name }}.{{ $file->extension }}" class="dropdown-item">
+									<a href="{{ asset($file->file_name) }}" target="_blank" download="{{ $file_name }}.{{ $file->extension }}" class="dropdown-item">
 										<i class="la la-download mr-2"></i>
 										<span>{{ translate('Download') }}</span>
 									</a>
-									<a href="javascript:void(0)" class="dropdown-item" onclick="copyUrl(this)" data-url="{{ my_asset($file->file_name) }}">
+									<a href="javascript:void(0)" class="dropdown-item" onclick="copyUrl(this)" data-url="{{ asset($file->file_name) }}">
 										<i class="las la-clipboard mr-2"></i>
 										<span>{{ translate('Copy Link') }}</span>
 									</a>

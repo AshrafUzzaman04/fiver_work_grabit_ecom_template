@@ -26,18 +26,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
 
     <!-- aiz core css -->
-    <link rel="stylesheet" href="{{ static_asset('assets/css/vendors.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vendors.css') }}">
     @if (\App\Models\Language::where('code', Session::get('locale', Config::get('app.locale')))->first()->rtl == 1)
-        <link rel="stylesheet" href="{{ static_asset('assets/css/bootstrap-rtl.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-rtl.min.css') }}">
     @endif
-    <link rel="stylesheet" href="{{ static_asset('assets/css/aiz-core.css?v=') }}{{ rand(1000,9999) }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/aiz-core.css?v=') }}{{ rand(1000,9999) }}">
 
     <style>
         :root {
             --blue: #3390f3;
             --hov-blue: #1f6dc2;
             --soft-blue: #f1fafd;
-            
+
             --primary: #009ef7;
             --hov-primary: #008cdd;
             --soft-primary: #f1fafd;
@@ -55,8 +55,8 @@
             --soft-danger: #fff4f8;
             --dark: #232734;
             --soft-dark: #1b2133;
-            
-            --secondary-base: #f1416c;  
+
+            --secondary-base: #f1416c;
             --hov-secondary-base: #c73459;
             --soft-secondary-base: rgb(241, 65, 108, 0.15);
         }
@@ -140,8 +140,8 @@
     @yield('modal')
 
 
-    <script src="{{ static_asset('assets/js/vendors.js') }}"></script>
-    <script src="{{ static_asset('assets/js/aiz-core.js?v=') }}{{ rand(1000,9999) }}"></script>
+    <script src="{{ asset('assets/js/vendors.js') }}"></script>
+    <script src="{{ asset('assets/js/aiz-core.js?v=') }}{{ rand(1000,9999) }}"></script>
 
     @yield('script')
 

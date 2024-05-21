@@ -27,16 +27,16 @@
             <!-- Banner -->
             @if (get_setting('flash_deal_banner') != null || get_setting('flash_deal_banner_small') != null)
                 <div class="mb-3 overflow-hidden hov-scale-img d-none d-md-block">
-                    <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" 
-                        data-src="{{ uploaded_asset(get_setting('flash_deal_banner')) }}" 
-                        alt="{{ env('APP_NAME') }} promo" class="lazyload img-fit h-100 has-transition" 
-                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';">
+                    <img src="{{ asset('assets/img/placeholder-rect.jpg') }}"
+                        data-src="{{ uploaded_asset(get_setting('flash_deal_banner')) }}"
+                        alt="{{ env('APP_NAME') }} promo" class="lazyload img-fit h-100 has-transition"
+                        onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder-rect.jpg') }}';">
                 </div>
                 <div class="mb-3 overflow-hidden hov-scale-img d-md-none">
-                    <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" 
-                        data-src="{{ get_setting('flash_deal_banner_small') != null ? uploaded_asset(get_setting('flash_deal_banner_small')) : uploaded_asset(get_setting('flash_deal_banner')) }}" 
-                        alt="{{ env('APP_NAME') }} promo" class="lazyload img-fit h-100 has-transition" 
-                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';">
+                    <img src="{{ asset('assets/img/placeholder-rect.jpg') }}"
+                        data-src="{{ get_setting('flash_deal_banner_small') != null ? uploaded_asset(get_setting('flash_deal_banner_small')) : uploaded_asset(get_setting('flash_deal_banner')) }}"
+                        alt="{{ env('APP_NAME') }} promo" class="lazyload img-fit h-100 has-transition"
+                        onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder-rect.jpg') }}';">
                 </div>
             @endif
             <!-- All flash deals -->
@@ -47,8 +47,8 @@
                         <a href="{{ route('flash-deal-details', $single->slug) }}" target="_blank" rel="noopener noreferrer">
                             <div class="h-100 w-100 position-relative hov-scale-img">
                                 <div class="position-absolute overflow-hidden h-100 w-100">
-                                    <img src="{{ uploaded_asset($single->banner) }}" class="img-fit h-100 has-transition"  
-                                                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                    <img src="{{ uploaded_asset($single->banner) }}" class="img-fit h-100 has-transition"
+                                                        onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                 </div>
                                 <div class="py-5 px-2 px-lg-3 px-xl-5 absolute-top-left w-100">
                                     <div class="bg-white">

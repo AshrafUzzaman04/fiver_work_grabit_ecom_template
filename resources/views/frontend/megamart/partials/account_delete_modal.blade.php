@@ -15,10 +15,10 @@
                     <span class="avatar avatar-md mb-2 mt-2">
                         @if (Auth::check() && Auth::user()->avatar_original != null)
                             <img src="{{ uploaded_asset(Auth::user()->avatar_original) }}" class="m-auto"
-                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';" alt="{{ translate('avatar') }}">
+                                onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';" alt="{{ translate('avatar') }}">
                         @else
-                            <img src="{{ static_asset('assets/img/avatar-place.png') }}" class="image rounded-circle m-auto"
-                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';" alt="{{ translate('avatar') }}">
+                            <img src="{{ asset('assets/img/avatar-place.png') }}" class="image rounded-circle m-auto"
+                                onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';" alt="{{ translate('avatar') }}">
                         @endif
                     </span>
                 </div>
@@ -31,7 +31,7 @@
                 <p class="fs-14 fw-700" style="color: #8d8d8d;">{{ translate('Deleting Account Means:')}}</p>
                 <div class="row bg-soft-warning py-2 mb-2 ml-0 mr-0 border-left border-width-2 border-danger">
                     <div class="col-1">
-                        <img src="{{ static_asset('assets/img/warning.png') }}" class="h-20px" alt="{{ translate('warning') }}">
+                        <img src="{{ asset('assets/img/warning.png') }}" class="h-20px" alt="{{ translate('warning') }}">
                     </div>
                     <div class="col">
                         <p class="fw-600 mb-0">{{ translate('If you create any classified ptoducts, after deleting your account, those products will no longer in our system') }}</p>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="row bg-soft-warning py-3 ml-0 mr-0 border-left border-width-2 border-danger">
                     <div class="col-1">
-                        <img src="{{ static_asset('assets/img/warning.png') }}" class="h-20px" alt="{{ translate('warning') }}">
+                        <img src="{{ asset('assets/img/warning.png') }}" class="h-20px" alt="{{ translate('warning') }}">
                     </div>
                     <div class="col">
                         <p class="fw-600 mb-0">{{ translate('After deleting your account, wallet balance will no longer in our system') }}</p>

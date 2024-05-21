@@ -8,8 +8,8 @@
         <div class="carousel-box topproducts top_category_products @if ($key == $top_categories2[0]) active @endif" onclick="top_category_products({{ $key }}, this)">
             <div class="size-80px border border-dashed rounded-2 overflow-hidden p-1">
                 <div class="h-100 rounded-2 overflow-hidden d-flex align-items-center">
-                    <img src="{{ uploaded_asset($top_categories_product[0]->cover_image) }}" alt="{{ translate('category')}}" 
-                        class="img-fit lazyload" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                    <img src="{{ uploaded_asset($top_categories_product[0]->cover_image) }}" alt="{{ translate('category')}}"
+                        class="img-fit lazyload" onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                 </div>
             </div>
             <p class="fs-11 fw-400 text-soft-dark text-truncate-2 h-30px px-1 w-80px">
@@ -51,7 +51,7 @@
                         @php
                             $product_img = null;
                             if($row->product_thumbnail_img){
-                                $product_img = ($row->product_thumbnail_img->external_link == null) ? my_asset($row->product_thumbnail_img->file_name) : $row->product_thumbnail_img->external_link;
+                                $product_img = ($row->product_thumbnail_img->external_link == null) ? asset($row->product_thumbnail_img->file_name) : $row->product_thumbnail_img->external_link;
                             }
                             $product_url = route('product', $row->product_slug);
                             if ($row->auction_product == 1) {
@@ -63,8 +63,8 @@
                                 <div class="d-flex align-items-center">
                                     <div class="rounded-2 overflow-hidden" style="min-height: 48px !important; min-width: 48px !important;max-height: 48px !important; max-width: 48px !important;">
                                         <a href="{{ $product_url }}" class="d-block" target="_blank">
-                                            <img src="{{ $product_img }}" alt="{{ translate('category')}}" 
-                                                class="h-100 img-fit lazyload" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                            <img src="{{ $product_img }}" alt="{{ translate('category')}}"
+                                                class="h-100 img-fit lazyload" onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                         </a>
                                     </div>
                                     <a href="{{ $product_url }}" target="_blank" class="d-block text-soft-dark fw-400 hov-text-primary ml-2 fs-13" title="{{ $row->product_name }}">
@@ -83,7 +83,7 @@
                 </tbody>
             </table>
         </div>
-        
+
         @php
             $top_categories_product_limit++;
             if($top_categories_product_limit > 12)

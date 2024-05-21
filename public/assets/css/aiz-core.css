@@ -663,7 +663,7 @@ fixed-bottom 1030*/
 .shadow-out ,
 .hov-shadow-out:hover {
     z-index: 2 !important;
-    box-shadow: 0px 20px 40px rgb(0 0 0 / 16%) !important;
+    box-shadow: 0px 0px 40px rgb(0 0 0 / 16%) !important;
     /* box-shadow: 0px 2px 30px -7px rgb(0 0 0 / 30%) !important; */
 }
 .shadow-none ,
@@ -7561,10 +7561,12 @@ input[type="number"] {
 .aiz-card-box .disc-amount{
     margin-right: -37%;
     opacity: 0 !important;
+    display: none;
 }
 .aiz-card-box:hover .disc-amount{
     margin-right: 0;
     opacity: 1 !important;
+    display: block;
 }
 
 .carousel-box .aiz-card-box {
@@ -11512,7 +11514,7 @@ ul.apps a:hover i{
 .hov-animate-outline:hover::after {
     border-bottom-color: var(--primary);
     border-left-color: var(--primary);
-    transition: 
+    transition:
       height 0.3s ease-out,
       width 0.3s ease-out 0.3s;
 }
@@ -11968,7 +11970,7 @@ ul.apps a:hover i{
 }
 .language-bar.nav .nav-item .nav-link.active:after,
 .language-bar.nav .nav-item .nav-link:hover:after{
-    
+
     background-color: var(--blue);
 }
 
@@ -12017,7 +12019,7 @@ ul.apps a:hover i{
         padding-right: 16px;
         padding-left: 16px;
     }
-    
+
     .image-show-overlay .overlay-img{
         padding-left: 20%;
         padding-right: 20%;

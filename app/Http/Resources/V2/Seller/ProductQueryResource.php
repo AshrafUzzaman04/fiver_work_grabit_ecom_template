@@ -17,7 +17,7 @@ class ProductQueryResource extends JsonResource
         return [
             "id"         => $this->id,
             "user_name"  => $this->user ? $this->user->name : 'Customer Not found',
-            "user_image" => $this->user ? uploaded_asset($this->user->avatar_original) : static_asset('assets/img/placeholder.jpg'),
+            "user_image" => $this->user ? uploaded_asset($this->user->avatar_original) : asset('assets/img/placeholder.jpg'),
             "question"   => $this->question,
             "reply"      => $this->reply ?? '',
             "product"    => $this->product ? $this->product->name : 'Product Not found',

@@ -1,27 +1,27 @@
 <!-- sellers -->
 <div class="aiz-carousel dashboard-box-carousel half-outside-arrow" data-items="6.5" data-xl-items="4.5"
     data-lg-items="5" data-md-items="7" data-sm-items="5" data-xs-items="3" data-arrows='true'>
-    
+
     @foreach ($new_top_sellers as $key => $top_sellers_product)
         <div class="carousel-box top_sellers_products @if ($key == 0) active @endif" onclick="top_sellers_products({{ $top_sellers_product->shop_id }}, this)">
             <div class="size-80px border border-dashed rounded-2 overflow-hidden p-1">
                 <div class="h-100 rounded-2 overflow-hidden d-flex align-items-center">
                     <img src="{{ uploaded_asset($top_sellers_product->logo) }}" alt="{{ translate('sellers') }}"
-                        class="img-fit lazyload" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                        class="img-fit lazyload" onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                 </div>
             </div>
             <p class="fs-11 fw-400 text-soft-dark text-truncate-2 h-30px px-1 w-80px">
                 {{ $top_sellers_product->shop_name }}
             </p>
         </div>
-        
+
     @endforeach
 </div>
 
 <!-- seller products -->
 <div class="position-relative">
     @foreach($new_top_sellers as $key => $top_sellers_product)
-        <div class="top_sellers_product_table top-products-table table-responsive c-scrollbar-light @if ($key == 0) show @endif" 
+        <div class="top_sellers_product_table top-products-table table-responsive c-scrollbar-light @if ($key == 0) show @endif"
             style="max-height: 215px; width: 100%;" id="top_sellers_product_table_{{ $top_sellers_product->shop_id }}">
             <table class="table dashboard-table mb-0">
                 <thead>
@@ -37,7 +37,7 @@
                         @php
                             $product_img = null;
                             if($row->thumbnail){
-                                $product_img = ($row->thumbnail->external_link == null) ? my_asset($row->thumbnail->file_name) : $row->thumbnail->external_link;
+                                $product_img = ($row->thumbnail->external_link == null) ? asset($row->thumbnail->file_name) : $row->thumbnail->external_link;
                             }
                             $product_url = route('product', $row->product_slug);
                             if ($row->auction_product == 1) {
@@ -50,8 +50,8 @@
                                     <div class="rounded-2 overflow-hidden"
                                         style="min-height: 48px !important; min-width: 48px !important;max-height: 48px !important; max-width: 48px !important;">
                                         <a href="{{ $product_url }}" class="d-block" target="_blank">
-                                            <img src="{{ $product_img }}" alt="{{ translate('category')}}" 
-                                                class="h-100 img-fit lazyload" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                            <img src="{{ $product_img }}" alt="{{ translate('category')}}"
+                                                class="h-100 img-fit lazyload" onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                         </a>
                                     </div>
                                     <a href="{{ $product_url }}" target="_blank" class="d-block text-soft-dark fw-400 hov-text-primary ml-2 fs-13" title="{{ $row->name }}">

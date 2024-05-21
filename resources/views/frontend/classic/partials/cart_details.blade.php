@@ -64,7 +64,7 @@
                                                 <img src="{{ uploaded_asset($product->thumbnail_img) }}"
                                                     class="img-fit size-70px"
                                                     alt="{{ $product->getTranslation('name')  }}"
-                                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                             </span>
                                             <span class="fs-14">{{ $product_name_with_choice }}</span>
                                         </div>
@@ -115,7 +115,7 @@
                                 <a href="{{ route('checkout.shipping_info') }}" class="btn btn-primary fs-14 fw-700 rounded-0 px-4">
                                     {{ translate('Continue to Shipping')}}
                                 </a>
-                            @else 
+                            @else
                                 <button class="btn btn-primary fs-14 fw-700 rounded-0 px-4" onclick="showLoginModal()">{{ translate('Continue to Shipping')}}</button>
                             @endif
                         </div>

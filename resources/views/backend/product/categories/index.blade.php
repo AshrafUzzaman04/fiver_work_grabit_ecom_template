@@ -56,7 +56,7 @@
                         <td class="d-flex align-items-center">
                             {{ $category->getTranslation('name') }}
                             @if($category->digital == 1)
-                                <img src="{{ static_asset('assets/img/digital_tag.png') }}" alt="{{translate('Digital')}}" class="ml-2 h-25px" style="cursor: pointer;" title="DIgital">
+                                <img src="{{ asset('assets/img/digital_tag.png') }}" alt="{{translate('Digital')}}" class="ml-2 h-25px" style="cursor: pointer;" title="DIgital">
                             @endif
                          </td>
                         <td>

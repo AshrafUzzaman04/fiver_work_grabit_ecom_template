@@ -25,16 +25,16 @@
                                             @if (Auth::user()->id == $conversation->sender_id)
                                                 @if ($conversation->receiver->shop != null)
                                                     <a href="{{ route('shop.visit', $conversation->receiver->shop->slug) }}" class="">
-                                                        <img src="{{ uploaded_asset($conversation->receiver->shop->logo) }}" 
-                                                            onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                                        <img src="{{ uploaded_asset($conversation->receiver->shop->logo) }}"
+                                                            onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                                                     </a>
                                                 @else
-                                                    <img @if ($conversation->receiver->avatar_original == null) src="{{ static_asset('assets/img/avatar-place.png') }}" 
-                                                        @else src="{{ uploaded_asset($conversation->receiver->avatar_original) }}" @endif 
-                                                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                                    <img @if ($conversation->receiver->avatar_original == null) src="{{ asset('assets/img/avatar-place.png') }}"
+                                                        @else src="{{ uploaded_asset($conversation->receiver->avatar_original) }}" @endif
+                                                        onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                                                 @endif
                                             @else
-                                                <img @if ($conversation->sender->avatar_original == null) src="{{ static_asset('assets/img/avatar-place.png') }}" @else src="{{ uploaded_asset($conversation->sender->avatar_original) }}" @endif class="rounded-circle" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                                <img @if ($conversation->sender->avatar_original == null) src="{{ asset('assets/img/avatar-place.png') }}" @else src="{{ uploaded_asset($conversation->sender->avatar_original) }}" @endif class="rounded-circle" onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                                             @endif
                                         </span>
                                     </div>
@@ -90,7 +90,7 @@
         <div class="row">
             <div class="col">
                 <div class="text-center bg-white p-4 border">
-                    <img class="mw-100 h-200px" src="{{ static_asset('assets/img/nothing.svg') }}" alt="Image">
+                    <img class="mw-100 h-200px" src="{{ asset('assets/img/nothing.svg') }}" alt="Image">
                     <h5 class="mb-0 h5 mt-3">{{ translate("There isn't anything added yet")}}</h5>
                 </div>
             </div>

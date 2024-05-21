@@ -44,8 +44,8 @@
                                         <li>
                                             <a href="javascript:void(0)" data-flag="{{ $language->code }}"
                                                 class="dropdown-item @if ($system_language->code == $language->code) active @endif">
-                                                <img src="{{ static_asset('assets/img/placeholder.jpg') }}"
-                                                    data-src="{{ static_asset('assets/img/flags/' . $language->code . '.png') }}"
+                                                <img src="{{ asset('assets/img/placeholder.jpg') }}"
+                                                    data-src="{{ asset('assets/img/flags/' . $language->code . '.png') }}"
                                                     class="mr-1 lazyload" alt="{{ $language->name }}" height="11">
                                                 <span class="language">{{ $language->name }}</span>
                                             </a>
@@ -141,7 +141,7 @@
                                 <img src="{{ uploaded_asset($header_logo) }}" alt="{{ env('APP_NAME') }}"
                                     class="mw-100 h-30px h-md-40px" height="40">
                             @else
-                                <img src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}"
+                                <img src="{{ asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}"
                                     class="mw-100 h-30px h-md-40px" height="40">
                             @endif
                         </a>
@@ -307,10 +307,10 @@
                                     @if ($user->avatar_original != null)
                                         <img src="{{ $user_avatar }}"
                                             class="img-fit h-100" alt="{{ translate('avatar') }}"
-                                            onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                            onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                                     @else
-                                        <img src="{{ static_asset('assets/img/avatar-place.png') }}" class="image" alt="{{ translate('avatar') }}"
-                                            onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                        <img src="{{ asset('assets/img/avatar-place.png') }}" class="image" alt="{{ translate('avatar') }}"
+                                            onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                                     @endif
                                 </span>
                                 <!-- Name -->
@@ -557,7 +557,7 @@
                     </div>
                     <!-- Header Menus -->
                     @php
-                        $nav_txt_color = ((get_setting('header_nav_menu_text') == 'light') ||  (get_setting('header_nav_menu_text') == null)) ? 'text-white' : 'text-dark';
+                        $nav_txt_color = ((get_setting('header_nav_menu_text') == 'light') ||  (get_setting('header_nav_menu_text') == null)) ? 'text-white' : 'text-white';
                     @endphp
                     <div class="ml-xl-4 w-100 overflow-hidden">
                         <div class="d-flex align-items-center justify-content-center justify-content-xl-start h-100">
@@ -566,7 +566,7 @@
                                     @foreach (json_decode(get_setting('header_menu_labels'), true) as $key => $value)
                                         <li class="list-inline-item mr-0 animate-underline-white">
                                             <a href="{{ json_decode(get_setting('header_menu_links'), true)[$key] }}"
-                                                class="fs-13 px-3 py-3 d-inline-block fw-700 {{ $nav_txt_color }} header_menu_links hov-bg-black-10
+                                                class="fs-13 text-white px-3 py-3 d-inline-block fw-700 {{ $nav_txt_color }} header_menu_links hov-bg-black-10
                                             @if (url()->current() == json_decode(get_setting('header_menu_links'), true)[$key]) active @endif">
                                                 {{ translate($value) }}
                                             </a>
@@ -614,10 +614,10 @@
                     <span class="size-40px rounded-circle overflow-hidden border border-transparent nav-user-img">
                         @if ($user->avatar_original != null)
                             <img src="{{ $user_avatar }}" class="img-fit h-100" alt="{{ translate('avatar') }}"
-                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                         @else
-                            <img src="{{ static_asset('assets/img/avatar-place.png') }}" class="image" alt="{{ translate('avatar') }}"
-                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                            <img src="{{ asset('assets/img/avatar-place.png') }}" class="image" alt="{{ translate('avatar') }}"
+                                onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                         @endif
                     </span>
                     <!-- Name -->

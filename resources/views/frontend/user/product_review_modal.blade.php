@@ -98,9 +98,9 @@
                         @foreach (explode(',', $review->photos) as $photo)
                             <div class="mr-3 mb-3 size-90px">
                                 <img class="img-fit h-100 lazyload border"
-                                    src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                    src="{{ asset('assets/img/placeholder.jpg') }}"
                                     data-src="{{ uploaded_asset($photo) }}"
-                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                             </div>
                         @endforeach
                     </div>

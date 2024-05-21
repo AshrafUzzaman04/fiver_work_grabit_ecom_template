@@ -14,7 +14,7 @@
                 <h1 class="h3">{{ translate('Add New Product') }}</h1>
             </div>
             {{-- <div class="col text-right">
-                <a class="btn has-transition btn-xs p-0 hov-svg-danger" href="{{ route('home') }}" 
+                <a class="btn has-transition btn-xs p-0 hov-svg-danger" href="{{ route('home') }}"
                     target="_blank" data-toggle="tooltip" data-placement="top" data-title="{{ translate('View Tutorial Video') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19.887" height="16" viewBox="0 0 19.887 16">
                         <path id="_42fbab5a39cb8436403668a76e5a774b" data-name="42fbab5a39cb8436403668a76e5a774b" d="M18.723,8H5.5A3.333,3.333,0,0,0,2.17,11.333v9.333A3.333,3.333,0,0,0,5.5,24h13.22a3.333,3.333,0,0,0,3.333-3.333V11.333A3.333,3.333,0,0,0,18.723,8Zm-3.04,8.88-5.47,2.933a1,1,0,0,1-1.473-.88V13.067a1,1,0,0,1,1.473-.88l5.47,2.933a1,1,0,0,1,0,1.76Zm-5.61-3.257L14.5,16l-4.43,2.377Z" transform="translate(-2.17 -8)" fill="#9da3ae"/>
@@ -86,7 +86,7 @@
                     </ul>
                 </div>
             @endif
-            
+
             <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data" enctype="multipart/form-data" id="choice_form">
                 @csrf
                 <div class="tab-content">
@@ -148,7 +148,7 @@
                                                 <small class="text-muted">{{translate('This is used for search. Input those words by which cutomer can find this product.')}}</small>
                                             </div>
                                         </div>
-                
+
                                         @if (addon_is_activated('pos_system'))
                                         <!-- Barcode -->
                                         <div class="form-group row">
@@ -158,7 +158,7 @@
                                             </div>
                                         </div>
                                         @endif
-                
+
                                         @if (addon_is_activated('refund_request'))
                                         <!-- refund_request -->
                                         <div class="form-group row mt-4 mb-4">
@@ -421,10 +421,10 @@
                                     <p>{{ translate('Choose the attributes of this product and then input values of each attribute') }}</p>
                                     <br>
                                 </div>
-        
+
                                 <!-- choice options -->
                                 <div class="customer_choice_options mb-4" id="customer_choice_options">
-        
+
                                 </div>
 
                                 <!-- Unit price -->
@@ -454,7 +454,7 @@
                                         </select>
                                     </div>
                                 </div>
-        
+
                                 @if(addon_is_activated('club_point'))
                                     <!-- club point -->
                                     <div class="form-group row">
@@ -466,7 +466,7 @@
                                         </div>
                                     </div>
                                 @endif
-                                    
+
                                 <div id="show-hide-div">
                                     <!-- Quantity -->
                                     <div class="form-group row">
@@ -508,7 +508,7 @@
                                 <br>
                                 <!-- sku combination -->
                                 <div class="sku_combination" id="sku_combination">
-        
+
                                 </div>
                             </div>
 
@@ -600,7 +600,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Shipping -->
                     <div class="tab-pane fade" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
                         <div class="bg-white p-3 p-sm-2rem">
@@ -676,7 +676,7 @@
                                 </p>
                                 @endif
                             </div>
-                            
+
                             <!-- Estimate Shipping Time -->
                             <h5 class="mb-3 mt-4 pb-3 fs-17 fw-700" style="border-bottom: 1px dashed #e4e5eb;">{{translate('Estimate Shipping Time')}}</h5>
                             <div class="w-100">
@@ -701,7 +701,7 @@
                             <!-- tab Title -->
                             <h5 class="mb-3 pb-3 fs-17 fw-700">{{translate('Frequently Brought')}}</h5>
                             <div class="w-100">
-                                <div class="d-flex mb-4"> 
+                                <div class="d-flex mb-4">
                                     <div class="radio mar-btm mr-5 d-flex align-items-center">
                                         <input id="fq_brought_select_products" type="radio" name="frequently_brought_selection_type" value="product" onchange="fq_brought_product_selection_type()" checked >
                                         <label for="fq_brought_select_products" class="fs-14 fw-700 mb-0 ml-2">{{translate('Select Product')}}</label>
@@ -720,8 +720,8 @@
 
                                             </div>
 
-                                            <button 
-                                                type="button" 
+                                            <button
+                                                type="button"
                                                 class="btn btn-block border border-dashed hov-bg-soft-secondary fs-14 rounded-0 d-flex align-items-center justify-content-center"
                                                 onclick="showFqBroughtProductModal()">
                                                 <i class="las la-plus"></i>
@@ -745,7 +745,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -774,7 +774,7 @@
 @section('script')
 
 <!-- Treeview js -->
-<script src="{{ static_asset('assets/js/hummingbird-treeview.js') }}"></script>
+<script src="{{ asset('assets/js/hummingbird-treeview.js') }}"></script>
 
 <script type="text/javascript">
 
@@ -806,7 +806,7 @@
 			$(".action-btn").attr("attempted", 'true');
 		}
     });
-    
+
     $("[name=shipping_type]").on("change", function (){
         $(".flat_rate_shipping_div").hide();
 
@@ -966,7 +966,7 @@
         }else{
             $('.nav-tabs a[href="#general"]').tab('show');
         }
-        
+
         // Change hash for page-reload
         $('.nav-tabs a').on('shown.bs.tab', function (e) {
             window.location.hash = e.target.hash;

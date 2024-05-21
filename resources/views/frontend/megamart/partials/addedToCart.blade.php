@@ -13,8 +13,8 @@
 
     <!-- Product Info -->
     <div class="media mb-1">
-        <img src="{{ static_asset('assets/img/placeholder.jpg') }}" data-src="{{ uploaded_asset($product->thumbnail_img) }}"
-            class="mr-4 lazyload size-90px img-fit rounded-0" alt="Product Image" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+        <img src="{{ asset('assets/img/placeholder.jpg') }}" data-src="{{ uploaded_asset($product->thumbnail_img) }}"
+            class="mr-4 lazyload size-90px img-fit rounded-0" alt="Product Image" onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
         <div class="media-body mt-2 text-left d-flex flex-column justify-content-between">
             <h6 class="fs-14 fw-700 text-truncate-2">
                 {{  $product->getTranslation('name')  }}
@@ -50,10 +50,10 @@
                         <div class="">
                             <a href="{{ route('product', $related_product->slug) }}" class="d-block">
                                 <img class="img-fit lazyload mx-auto h-140px h-md-200px has-transition"
-                                    src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                    src="{{ asset('assets/img/placeholder.jpg') }}"
                                     data-src="{{ uploaded_asset($related_product->thumbnail_img) }}"
                                     alt="{{ $related_product->getTranslation('name') }}"
-                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                             </a>
                         </div>
                         <div class="p-md-3 p-2 text-center">
@@ -82,6 +82,6 @@
         <div class="col-sm-6">
             <a href="{{ route('cart') }}" class="btn btn-primary mb-3 mb-sm-0 btn-block rounded-0">{{ translate('Proceed to Checkout')}}</a>
         </div>
-        
+
     </div>
 </div>

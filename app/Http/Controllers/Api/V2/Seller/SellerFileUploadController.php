@@ -219,7 +219,7 @@ class SellerFileUploadController extends Controller
         $files = Upload::whereIn('id', $ids)->get();
         $new_file_array = [];
         foreach ($files as $file) {
-            $file['file_name'] = my_asset($file->file_name);
+            $file['file_name'] = asset($file->file_name);
             if ($file->external_link) {
                 $file['file_name'] = $file->external_link;
             }

@@ -15,8 +15,8 @@
                         <input type="hidden" name="fq_brought_product_ids[]" value="{{ $product->id }}">
                         <td class="w-150px pl-0" style="vertical-align: middle;">
                             <p class="d-block size-48px">
-                                <img src="{{ uploaded_asset($product->thumbnail_img) }}" alt="{{ translate('Image')}}" 
-                                    class="h-100 img-fit lazyload" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                <img src="{{ uploaded_asset($product->thumbnail_img) }}" alt="{{ translate('Image')}}"
+                                    class="h-100 img-fit lazyload" onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                             </p>
                         </td>
                         <td style="vertical-align: middle;">

@@ -1,4 +1,4 @@
-<script src="{{ static_asset('assets/js/vendors.js') }}"></script>
+<script src="{{ asset('assets/js/vendors.js') }}"></script>
 <script>
     (function ($) {
         // USE STRICT
@@ -78,7 +78,7 @@
 
         var iti = intlTelInput(input, {
             separateDialCode: true,
-            utilsScript: "{{ static_asset('assets/js/intlTelutils.js') }}?1590403638580",
+            utilsScript: "{{ asset('assets/js/intlTelutils.js') }}?1590403638580",
             onlyCountries: @php echo get_active_countries()->pluck('code') @endphp,
             customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
                 if (selectedCountryData.iso2 == 'bd') {
@@ -113,5 +113,5 @@
                 $(el).html('<i>*{{ translate('Use Email Instead') }}</i>');
             }
         }
-    </script> 
+    </script>
 @endif

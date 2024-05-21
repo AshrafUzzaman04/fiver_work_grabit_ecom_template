@@ -45,14 +45,14 @@
                                     $photos = explode(',',$detailedProduct->photos);
                                 @endphp
                                 <div class="col order-1 order-md-2">
-                                    <div class="aiz-carousel product-gallery" data-nav-for='.product-gallery-thumb' 
+                                    <div class="aiz-carousel product-gallery" data-nav-for='.product-gallery-thumb'
                                         data-fade='true' data-auto-height='true'>
                                         @foreach ($photos as $key => $photo)
                                         <div class="carousel-box img-zoom rounded">
                                             <img class="img-fluid lazyload"
-                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                src="{{ asset('assets/img/placeholder.jpg') }}"
                                                 data-src="{{ uploaded_asset($photo) }}"
-                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                         </div>
                                         @endforeach
                                     </div>
@@ -62,9 +62,9 @@
                                         @foreach ($photos as $key => $photo)
                                         <div class="carousel-box c-pointer border rounded-0">
                                             <img class="lazyload mw-100 size-60px mx-auto"
-                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                src="{{ asset('assets/img/placeholder.jpg') }}"
                                                 data-src="{{ uploaded_asset($photo) }}"
-                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                         </div>
                                         @endforeach
                                     </div>
@@ -74,7 +74,7 @@
 
                         </div>
                     </div>
-                    
+
                     <!-- Product Details -->
                     <div class="col-xl-7 col-lg-6">
                         <div class="text-left">
@@ -134,9 +134,9 @@
                                         @if ($detailedProduct->added_by == 'seller' && get_setting('vendor_system_activation') == 1)
                                         <a href="{{ route('shop.visit', $detailedProduct->user->shop->slug) }}" class="size-40px rounded-content mr-2 overflow-hidden border">
                                             <img class="lazyload img-fit h-100 mx-auto"
-                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                src="{{ asset('assets/img/placeholder.jpg') }}"
                                                 data-src="{{ uploaded_asset($detailedProduct->user->shop->logo) }}"
-                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                         </a>
                                         @endif
                                         <!-- Shop Name -->
@@ -164,7 +164,7 @@
                                                   <path id="Path_3015" data-name="Path 3015" d="M131.349,99.312h5a.5.5,0,1,1,0,1h-5a.5.5,0,1,1,0-1" transform="translate(-1181 -346.5)" fill="#f4b650"/>
                                                 </g>
                                               </svg>
-                                              
+
                                             {{ translate('Message Seller') }}
                                         </button>
                                     </div>
@@ -175,10 +175,10 @@
                                         <div class="d-flex">
                                             <a href="{{ route('products.brand', $detailedProduct->brand->slug) }}" class="size-40px rounded-content mr-2 overflow-hidden border p-1">
                                                 <img class="lazyload img-fit h-100 mx-auto"
-                                                    src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                    src="{{ asset('assets/img/placeholder.jpg') }}"
                                                     data-src="{{ uploaded_asset($detailedProduct->brand->logo) }}"
                                                     alt="{{ $detailedProduct->brand->getTranslation('name') }}"
-                                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                             </a>
                                             <div>
                                                 <span class="opacity-60 fw-400">{{ translate('Brand') }}</span><br>
@@ -193,7 +193,7 @@
                             <hr>
 
                             @if(home_price($detailedProduct) != home_discounted_price($detailedProduct))
-                                
+
                                 <div class="row no-gutters mb-3">
                                     <div class="col-sm-2">
                                         <div class="text-secondary fs-14 fw-400">{{ translate('Price')}}</div>
@@ -339,7 +339,7 @@
                                             @if ($refund_sticker != null)
                                                 <img src="{{ uploaded_asset($refund_sticker) }}" height="36">
                                             @else
-                                                <img src="{{ static_asset('assets/img/refund-sticker.jpg') }}"
+                                                <img src="{{ asset('assets/img/refund-sticker.jpg') }}"
                                                     height="36">
                                             @endif
                                         </a>
@@ -364,7 +364,7 @@
                                     </div>
                                 </div>
                             @endif
-                            
+
                             <!-- Share -->
                             <div class="row no-gutters mt-4">
                                 <div class="col-sm-2">
@@ -385,7 +385,7 @@
     <section class="mb-4">
         <div class="container">
             <div class="row gutters-16">
-                
+
                 <!-- Left side -->
                 <div class="col-xl-3 order-1 order-xl-0">
 
@@ -409,9 +409,9 @@
                                     @if ($detailedProduct->added_by == 'seller' && get_setting('vendor_system_activation') == 1)
                                     <a href="{{ route('shop.visit', $detailedProduct->user->shop->slug) }}" class="h-60px w-70px rounded-content mr-2 overflow-hidden border">
                                         <img class="lazyload img-fit h-100 mx-auto"
-                                            src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                            src="{{ asset('assets/img/placeholder.jpg') }}"
                                             data-src="{{ uploaded_asset($detailedProduct->user->shop->logo) }}"
-                                            onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                            onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                     </a>
                                     @endif
                                     <!-- Shop Name -->
@@ -492,10 +492,10 @@
                                                 <a href="{{ route('product', $top_product->slug) }}"
                                                     class="d-block text-reset">
                                                     <img class="img-fit lazyload h-xl-80px h-120px has-transition"
-                                                        src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                        src="{{ asset('assets/img/placeholder.jpg') }}"
                                                         data-src="{{ uploaded_asset($top_product->thumbnail_img) }}"
                                                         alt="{{ $top_product->getTranslation('name') }}"
-                                                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                        onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                                 </a>
                                             </div>
                                             <div class="col-8 text-left">
@@ -575,7 +575,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- Download -->
                             <div class="tab-pane fade" id="tab_default_3">
                                 <div class="py-5 text-center ">
@@ -583,7 +583,7 @@
                                         class="btn btn-primary">{{ translate('Download') }}</a>
                                 </div>
                             </div>
-                            
+
                             <!-- Review -->
                             <div class="tab-pane fade" id="tab_default_4">
                                 <div class="py-5">
@@ -593,11 +593,11 @@
                                                 <li class="media list-group-item d-flex">
                                                     <span class="avatar avatar-md mr-3">
                                                         <img class="lazyload"
-                                                            src="{{ static_asset('assets/img/placeholder.jpg') }}"
-                                                            onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';"
+                                                            src="{{ asset('assets/img/placeholder.jpg') }}"
+                                                            onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';"
                                                             @if ($review->user->avatar_original != null) data-src="{{ uploaded_asset($review->user->avatar_original) }}"
                                                         @else
-                                                            data-src="{{ static_asset('assets/img/placeholder.jpg') }}" @endif>
+                                                            data-src="{{ asset('assets/img/placeholder.jpg') }}" @endif>
                                                     </span>
                                                     <div class="media-body text-left">
                                                         <div class="d-flex justify-content-between">
@@ -632,7 +632,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Related products -->
                     <div class="bg-white border">
                         <div class="p-4">
@@ -651,10 +651,10 @@
                                                 <a href="{{ route('product', $related_product->slug) }}"
                                                     class="d-block">
                                                     <img class="img-fit lazyload mx-auto h-140px h-md-190px has-transition"
-                                                        src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                        src="{{ asset('assets/img/placeholder.jpg') }}"
                                                         data-src="{{ uploaded_asset($related_product->thumbnail_img) }}"
                                                         alt="{{ $related_product->getTranslation('name') }}"
-                                                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                        onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                                 </a>
                                             </div>
                                             <div class="p-md-3 p-2 text-center">
@@ -712,7 +712,7 @@
                                         <div class="form-group">
                                             <textarea class="form-control rounded-0" rows="3" cols="40" name="question"
                                                 placeholder="{{ translate('Write your question here...') }}" style="resize: none;"></textarea>
-                                            
+
                                         </div>
                                         <button type="submit" class="btn btn-sm w-150px btn-primary rounded-0">{{ translate('Submit') }}</button>
                                     </form>
@@ -723,7 +723,7 @@
                                     $own_product_queries = Auth::user()->product_queries->where('product_id',$detailedProduct->id);
                                 @endphp
                                 @if ($own_product_queries->count() > 0)
-                                
+
                                     <div class="question-area my-4 mb-0 px-4">
 
                                         <div class="py-3">
@@ -775,10 +775,10 @@
                                             </div>
                                         @endforeach
                                     </div>
-                                
+
                                 @endif
                             @endauth
-                                    
+
                             <!-- Others Queries -->
                             <div class="pagination-area my-4 mb-0 px-4">
                                 @include('frontend.'.get_setting('homepage_select').'.partials.product_query_pagination')

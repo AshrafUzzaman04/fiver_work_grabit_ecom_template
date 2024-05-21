@@ -1,1 +1,22 @@
-/*your custom css goes here*/ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: "Prompt", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"; */
+    font-family: "BioRhyme", serif !important;
+    font-weight: 400;
+    color: #565656;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: "BioRhyme", serif;
+    font-weight: 600;
+    line-height: 1.1;
+    font-size: 1.8rem;
+    margin-top: 1.9rem;
+    margin-bottom: .95rem;
+    text-transform: capitalize;
+}

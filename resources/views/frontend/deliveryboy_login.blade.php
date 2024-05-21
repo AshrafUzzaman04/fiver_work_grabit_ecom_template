@@ -12,7 +12,7 @@
                             @if(get_setting('system_logo_black') != null)
                                 <img src="{{ uploaded_asset(get_setting('system_logo_black')) }}" class="mw-100 mb-4" height="40">
                             @else
-                                <img src="{{ static_asset('assets/img/logo.png') }}" class="mw-100 mb-4" height="40">
+                                <img src="{{ asset('assets/img/logo.png') }}" class="mw-100 mb-4" height="40">
                             @endif
                             <h1 class="fs-20 fs-md-24 fw-700 text-primary">{{ translate('Welcome Back !')}}</h1>
                             <h5 class="fs-14 fw-400 text-dark">{{ translate('Login To Your Delivery Boy Account')}}</h5>
@@ -29,7 +29,7 @@
                                     </span>
                                 @endif
                             </div>
-                                
+
                             <!-- password -->
                             <div class="form-group">
                                 <label for="password" class="fs-12 fw-500 text-secondary">{{  translate('Password') }}</label>

@@ -13,7 +13,7 @@
                 @foreach (get_all_active_language() as $key => $language)
                     <li class="nav-item">
                         <a class="nav-link text-reset @if ($language->code == $lang) active @endif py-3" href="{{ route('roles.edit', ['id'=>$role->id, 'lang'=> $language->code] ) }}">
-                            <img src="{{ static_asset('assets/img/flags/'.$language->code.'.png') }}" height="11" class="mr-1">
+                            <img src="{{ asset('assets/img/flags/'.$language->code.'.png') }}" height="11" class="mr-1">
                             <span>{{$language->name}}</span>
                         </a>
                     </li>
@@ -41,7 +41,7 @@
                 @foreach ($permission_groups as $key => $permission_group)
                     @php
                         $show_permission_group = true;
-                        
+
                         if(in_array($permission_group[0]['section'], $addons)){
 
                             if (addon_is_activated($permission_group[0]['section']) == false) {

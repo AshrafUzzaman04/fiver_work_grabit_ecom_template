@@ -43,9 +43,9 @@
                                         @foreach ($photos as $key => $photo)
                                         <div class="carousel-box img-zoom rounded-0">
                                             <img class="img-fluid h-auto lazyload mx-auto"
-                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                src="{{ asset('assets/img/placeholder.jpg') }}"
                                                 data-src="{{ uploaded_asset($photo) }}"
-                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                         </div>
                                         @endforeach
                                     </div>
@@ -56,9 +56,9 @@
                                         @foreach ($photos as $key => $photo)
                                         <div class="carousel-box c-pointer rounded-0">
                                             <img class="lazyload mw-100 size-60px mx-auto border p-1"
-                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                src="{{ asset('assets/img/placeholder.jpg') }}"
                                                 data-src="{{ uploaded_asset($photo) }}"
-                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                         </div>
                                         @endforeach
                                     </div>
@@ -215,10 +215,10 @@
                                     <div class="position-relative">
                                         <a href="{{ route('customer.product', $product->slug) }}" class="d-block">
                                             <img class="img-fit lazyload mx-auto h-140px h-md-210px"
-                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                src="{{ asset('assets/img/placeholder.jpg') }}"
                                                 data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                                 alt="{{ $product->getTranslation('name') }}"
-                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                         </a>
                                         <div class="absolute-top-left">
                                             @if ($product->conditon == 'new')

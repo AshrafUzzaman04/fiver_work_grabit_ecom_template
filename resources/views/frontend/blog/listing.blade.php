@@ -34,7 +34,7 @@
                         @foreach($blogs as $blog)
                             <div class="card mb-4 overflow-hidden shadow-none border rounded-0 hov-scale-img p-3">
                                 <a href="{{ url("blog").'/'. $blog->slug }}" class="text-reset d-block overflow-hidden h-180px">
-                                    <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}"
+                                    <img src="{{ asset('assets/img/placeholder-rect.jpg') }}"
                                         data-src="{{ uploaded_asset($blog->banner) }}"
                                         alt="{{ $blog->title }}"
                                         class="img-fit lazyload h-100 has-transition">
@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                         @endforeach
-                        
+
                     </div>
                     <!-- Pagination -->
                     <div class="aiz-pagination mt-4">
@@ -115,7 +115,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </form>
@@ -129,7 +129,7 @@
                                 <div class="d-flex">
                                     <div class="">
                                         <a href="{{ url("blog").'/'. $recent_blog->slug }}" class="text-reset d-block overflow-hidden size-80px size-xl-90px mr-2">
-                                            <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}"
+                                            <img src="{{ asset('assets/img/placeholder-rect.jpg') }}"
                                                 data-src="{{ uploaded_asset($recent_blog->banner) }}"
                                                 alt="{{ $recent_blog->title }}"
                                                 class="img-fit lazyload h-100 has-transition">

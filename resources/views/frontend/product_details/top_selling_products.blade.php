@@ -12,10 +12,10 @@
                             <a href="{{ route('product', $top_product->slug) }}"
                                 class="d-block text-reset">
                                 <img class="img-fit lazyload h-80px h-md-150px h-lg-80px has-transition"
-                                    src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                    src="{{ asset('assets/img/placeholder.jpg') }}"
                                     data-src="{{ uploaded_asset($top_product->thumbnail_img) }}"
                                     alt="{{ $top_product->getTranslation('name') }}"
-                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                             </a>
                         </div>
                         <div class="col text-left">

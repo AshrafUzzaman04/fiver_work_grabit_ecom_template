@@ -55,7 +55,7 @@
                         <td class="align-items-center d-flex fw-800">
                             {{ $category->getTranslation('name') }}
                             @if($category->digital == 1)
-                                <img src="{{ static_asset('assets/img/digital_tag.png') }}" alt="{{translate('Digital')}}" class="ml-2 h-25px" style="cursor: pointer;" title="DIgital">
+                                <img src="{{ asset('assets/img/digital_tag.png') }}" alt="{{translate('Digital')}}" class="ml-2 h-25px" style="cursor: pointer;" title="DIgital">
                             @endif
                          </td>
                         <td class="fw-600">
@@ -122,10 +122,10 @@
             }
             else{
                 $.post('{{ route('set_product_discount') }}', {
-                    _token:'{{ csrf_token() }}', 
-                    category_id:CategoryId, 
-                    discount:discount, 
-                    date_range:dateRange, 
+                    _token:'{{ csrf_token() }}',
+                    category_id:CategoryId,
+                    discount:discount,
+                    date_range:dateRange,
                     seller_product_discount:sellerProductDiscount
                 }, function(data) {
                     if(data == 1){
@@ -135,7 +135,7 @@
                 }).fail(function() {
                     AIZ.plugins.notify('danger', '{{ translate('Something went wrong') }}');
                 });
-            }   
+            }
         }
     </script>
 @endsection

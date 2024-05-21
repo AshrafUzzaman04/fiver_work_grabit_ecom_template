@@ -1,6 +1,6 @@
 <!-- footer Description -->
 @if (get_setting('footer_title') != null || get_setting('footer_description') != null)
-    <section class="bg-light border-top border-bottom mt-auto">
+    <section class="bg-light border-top border-bottom mt-5">
         <div class="container py-4">
             <h1 class="fs-18 fw-700 text-gray-dark mb-3">{{ get_setting('footer_title',null, $system_language->code) }}</h1>
             <p class="fs-13 text-gray-dark text-justify mb-0">
@@ -11,19 +11,19 @@
 @endif
 
 <!-- footer top Bar -->
-<section class="bg-light border-top mt-auto">
+<section class="bg-light border-top mt-5">
     <div class="container px-xs-0">
         <div class="row no-gutters border-left border-soft-light">
             <!-- Terms & conditions -->
             <div class="col-lg-3 col-6 policy-file">
-                <a class="text-reset h-100  border-right border-bottom border-soft-light text-center p-2 p-md-4 d-block hov-ls-1" href="{{ route('terms') }}">
+                <a class="text-reset h-100 border-right border-bottom border-soft-light text-center p-2 p-md-4 d-block hov-ls-1" href="{{ route('terms') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26.004" height="32" viewBox="0 0 26.004 32">
                         <path id="Union_8" data-name="Union 8" d="M-14508,18932v-.01a6.01,6.01,0,0,1-5.975-5.492h-.021v-14h1v13.5h0a4.961,4.961,0,0,0,4.908,4.994h.091v0h14v1Zm17-4v-1a2,2,0,0,0,2-2h1a3,3,0,0,1-2.927,3Zm-16,0a3,3,0,0,1-3-3h1a2,2,0,0,0,2,2h16v1Zm18-3v-16.994h-4v-1h3.6l-5.6-5.6v3.6h-.01a2.01,2.01,0,0,0,2,2v1a3.009,3.009,0,0,1-3-3h.01v-4h.6l0,0H-14507a2,2,0,0,0-2,2v22h-1v-22a3,3,0,0,1,3-3v0h12l0,0,7,7-.01.01V18925Zm-16-4.992v-1h12v1Zm0-4.006v-1h12v1Zm0-4v-1h12v1Z" transform="translate(14513.998 -18900.002)" fill="#919199"/>
                     </svg>
                     <h4 class="text-dark fs-14 fw-700 mt-3">{{ translate('Terms & conditions') }}</h4>
                 </a>
             </div>
-            
+
             <!-- Return Policy -->
             <div class="col-lg-3 col-6 policy-file">
                 <a class="text-reset h-100  border-right border-bottom border-soft-light text-center p-2 p-md-4 d-block hov-ls-1" href="{{ route('returnpolicy') }}">
@@ -75,15 +75,15 @@
     <div class="container">
         <!-- footer logo -->
         <div class="mt-3 mb-4">
-            <a href="{{ route('home') }}" class="d-block">
+            <a href="{{ route('home') }}" class="d-block text-center">
                 @if(get_setting('footer_logo') != null)
-                    <img class="lazyload h-45px" src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset(get_setting('footer_logo')) }}" alt="{{ env('APP_NAME') }}" height="45">
+                    <img class="lazyload h-45px" src="{{ asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset(get_setting('footer_logo')) }}" alt="{{ env('APP_NAME') }}" height="45">
                 @else
-                    <img class="lazyload h-45px" src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}" height="45">
+                    <img class="lazyload h-45px" src="{{ asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}" height="45">
                 @endif
             </a>
         </div>
-        <div class="row">
+        <div class="row d-flex justify-content-center align-items-center">
             <!-- about & subscription -->
             <div class="col-xl-6 col-lg-7">
                 <div class="mb-4 text-secondary text-justify">
@@ -104,7 +104,8 @@
                     </form>
                 </div>
             </div>
-            
+
+            @if ( get_setting('show_social_links') && (get_setting('play_store_link') != null) || (get_setting('app_store_link') != null))
             <div class="col d-none d-lg-block"></div>
 
             <!-- Follow & Apps -->
@@ -152,18 +153,19 @@
                     <div class="d-flex mt-3">
                         <div class="">
                             <a href="{{ get_setting('play_store_link') }}" target="_blank" class="mr-2 mb-2 overflow-hidden hov-scale-img">
-                                <img class="lazyload has-transition" src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ static_asset('assets/img/play.png') }}" alt="{{ env('APP_NAME') }}" height="44">
+                                <img class="lazyload has-transition" src="{{ asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ asset('assets/img/play.png') }}" alt="{{ env('APP_NAME') }}" height="44">
                             </a>
                         </div>
                         <div class="">
                             <a href="{{ get_setting('app_store_link') }}" target="_blank" class="overflow-hidden hov-scale-img">
-                                <img class="lazyload has-transition" src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ static_asset('assets/img/app.png') }}" alt="{{ env('APP_NAME') }}" height="44">
+                                <img class="lazyload has-transition" src="{{ asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ asset('assets/img/app.png') }}" alt="{{ env('APP_NAME') }}" height="44">
                             </a>
                         </div>
                     </div>
                 @endif
 
             </div>
+            @endif
         </div>
     </div>
 </section>
@@ -174,32 +176,35 @@
 <section class="py-lg-3 text-light footer-widget" style="background-color: #212129 !important;">
     <!-- footer widgets ========== [Accordion Fotter widgets are bellow from this]-->
     <div class="container d-none d-lg-block">
-        <div class="row">
-            <!-- Quick links -->
-            <div class="{{ $col_values }}">
-                <div class="text-center text-sm-left mt-4">
-                    <h4 class="fs-14 text-secondary text-uppercase fw-700 mb-3">
-                        {{ get_setting('widget_one',null,App::getLocale()) }}
-                    </h4>
-                    <ul class="list-unstyled">
-                        @if ( get_setting('widget_one_labels',null,App::getLocale()) !=  null )
-                            @foreach (json_decode( get_setting('widget_one_labels',null,App::getLocale()), true) as $key => $value)
-                            @php
-								$widget_one_links = '';
-								if(isset(json_decode(get_setting('widget_one_links'), true)[$key])) {
-									$widget_one_links = json_decode(get_setting('widget_one_links'), true)[$key];
-								}
-							@endphp
-                            <li class="mb-2">
-                                <a href="{{ $widget_one_links }}" class="fs-13 text-soft-light animate-underline-white">
-                                    {{ $value }}
-                                </a>
-                            </li>
-                            @endforeach
-                        @endif
-                    </ul>
+        <div class="row d-flex justify-content-center align-items-center">
+
+            @if ( get_setting('widget_one_labels',null,App::getLocale()) !=  null )
+                <!-- Quick links -->
+                <div class="{{ $col_values }}">
+                    <div class="text-center text-sm-left mt-4">
+                        <h4 class="fs-14 text-secondary text-uppercase fw-700 mb-3">
+                            {{ get_setting('widget_one',null,App::getLocale()) }}
+                        </h4>
+                        <ul class="list-unstyled">
+                            @if ( get_setting('widget_one_labels',null,App::getLocale()) !=  null )
+                                @foreach (json_decode( get_setting('widget_one_labels',null,App::getLocale()), true) as $key => $value)
+                                @php
+                                    $widget_one_links = '';
+                                    if(isset(json_decode(get_setting('widget_one_links'), true)[$key])) {
+                                        $widget_one_links = json_decode(get_setting('widget_one_links'), true)[$key];
+                                    }
+                                @endphp
+                                <li class="mb-2">
+                                    <a href="{{ $widget_one_links }}" class="fs-13 text-soft-light animate-underline-white">
+                                        {{ $value }}
+                                    </a>
+                                </li>
+                                @endforeach
+                            @endif
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            @endif
 
             <!-- Contacts -->
             <div class="{{ $col_values }}">
@@ -278,7 +283,7 @@
                         <ul class="list-unstyled">
                             <li class="mb-2">
                                 <p class="fs-13 text-soft-light mb-0">
-                                    {{ translate('Become A Seller') }} 
+                                    {{ translate('Become A Seller') }}
                                     <a href="{{ route('shops.create') }}" class="fs-13 fw-700 text-secondary-base ml-2">{{ translate('Apply Now') }}</a>
                                 </p>
                             </li>
@@ -310,7 +315,7 @@
                                     </a>
                                 </li>
                             @endguest
-                            
+
                             @if(get_setting('delivery_boy_app_link'))
                                 <li class="mb-2">
                                     <a class="fs-13 text-soft-light animate-underline-white" target="_blank" href="{{ get_setting('delivery_boy_app_link')}}">
@@ -355,7 +360,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Contacts -->
         <div class="aiz-accordion-wrap bg-black">
             <div class="aiz-accordion-heading container bg-black">
@@ -442,7 +447,7 @@
                     <ul class="list-unstyled mt-3">
                         <li class="mb-2 pb-2 {{ areActiveRoutes(['shops.create'],' active')}}">
                             <p class="fs-13 text-soft-light text-sm-secondary mb-0">
-                                {{ translate('Become A Seller') }} 
+                                {{ translate('Become A Seller') }}
                                 <a href="{{ route('shops.create') }}" class="fs-13 fw-700 text-secondary-base ml-2">{{ translate('Apply Now') }}</a>
                             </p>
                         </li>
@@ -497,6 +502,7 @@
     </div>
 </section>
 
+@if(get_setting('frontend_copyright_text', null, App::getLocale()) || get_setting('payment_method_images') !=  null)
 <!-- FOOTER -->
 <footer class="pt-3 pb-7 pb-xl-3 bg-black text-soft-light">
     <div class="container">
@@ -508,6 +514,7 @@
                 </div>
             </div>
 
+            @if ( get_setting('payment_method_images') !=  null )
             <!-- Payment Method Images -->
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <div class="text-center text-lg-right">
@@ -522,9 +529,11 @@
                     </ul>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </footer>
+@endif
 
 <!-- Mobile bottom nav -->
 <div class="aiz-mobile-bottom-nav d-xl-none fixed-bottom border-top border-sm-bottom border-sm-left border-sm-right mx-auto mb-sm-2" style="background-color: rgb(255 255 255 / 90%)!important;">
@@ -609,7 +618,7 @@
                             @if($user->avatar_original != null)
                                 <img src="{{ $user_avatar }}" alt="{{ translate('avatar') }}" class="rounded-circle size-20px">
                             @else
-                                <img src="{{ static_asset('assets/img/avatar-place.png') }}" alt="{{ translate('avatar') }}" class="rounded-circle size-20px">
+                                <img src="{{ asset('assets/img/avatar-place.png') }}" alt="{{ translate('avatar') }}" class="rounded-circle size-20px">
                             @endif
                         </span>
                         <span class="d-block mt-1 fs-10 fw-600 text-reset">{{ translate('My Account') }}</span>
@@ -620,7 +629,7 @@
                             @if($user->avatar_original != null)
                                 <img src="{{ $user_avatar }}" alt="{{ translate('avatar') }}" class="rounded-circle size-20px">
                             @else
-                                <img src="{{ static_asset('assets/img/avatar-place.png') }}" alt="{{ translate('avatar') }}" class="rounded-circle size-20px">
+                                <img src="{{ asset('assets/img/avatar-place.png') }}" alt="{{ translate('avatar') }}" class="rounded-circle size-20px">
                             @endif
                         </span>
                         <span class="d-block mt-1 fs-10 fw-600 text-reset">{{ translate('My Account') }}</span>
@@ -631,7 +640,7 @@
                             @if($user->avatar_original != null)
                                 <img src="{{ $user_avatar }}" alt="{{ translate('avatar') }}" class="rounded-circle size-20px">
                             @else
-                                <img src="{{ static_asset('assets/img/avatar-place.png') }}" alt="{{ translate('avatar') }}" class="rounded-circle size-20px">
+                                <img src="{{ asset('assets/img/avatar-place.png') }}" alt="{{ translate('avatar') }}" class="rounded-circle size-20px">
                             @endif
                         </span>
                         <span class="d-block mt-1 fs-10 fw-600 text-reset">{{ translate('My Account') }}</span>

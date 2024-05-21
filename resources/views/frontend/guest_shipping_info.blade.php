@@ -171,7 +171,7 @@
             var state_id = $(this).val();
             get_city(state_id);
         });
-        
+
         function get_states(country_id) {
             $('[name="state"]').html("");
             $.ajax({
@@ -227,7 +227,7 @@
 
         var iti = intlTelInput(input, {
             separateDialCode: true,
-            utilsScript: "{{ static_asset('assets/js/intlTelutils.js') }}?1590403638580",
+            utilsScript: "{{ asset('assets/js/intlTelutils.js') }}?1590403638580",
             onlyCountries: @php
                 echo json_encode(
                     \App\Models\Country::where('status', 1)
@@ -256,10 +256,10 @@
 
     </script>
 
-    
+
     @if (get_setting('google_map') == 1)
         @include('frontend.'.get_setting('homepage_select').'.partials.google_map')
     @endif
 
-    
+
 @endsection

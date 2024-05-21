@@ -12,7 +12,7 @@
                 </svg>
             </a>
         </div>
-        
+
     </div>
     <div class="d-flex justify-content-between align-items-stretch flex-grow-1">
         <div class="d-flex justify-content-around align-items-center align-items-stretch">
@@ -31,7 +31,7 @@
             <!-- POS -->
             <div class="aiz-topbar-item mr-3">
                 <div class="d-flex align-items-center">
-                    <a class="btn btn-topbar has-transition btn-icon btn-circle btn-light p-0 hov-bg-primary hov-svg-white d-flex align-items-center justify-content-center" 
+                    <a class="btn btn-topbar has-transition btn-icon btn-circle btn-light p-0 hov-bg-primary hov-svg-white d-flex align-items-center justify-content-center"
                         href="{{ route('poin-of-sales.index') }}" target="_blank" data-toggle="tooltip" data-title="{{ translate('POS') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="13.79" height="16" viewBox="0 0 13.79 16">
                             <g id="_371925cdd3f531725a9fa8f3ebf8fe9e" data-name="371925cdd3f531725a9fa8f3ebf8fe9e" transform="translate(-2.26 0)">
@@ -48,7 +48,7 @@
             <!-- Clear Cache -->
             <div class="aiz-topbar-item mr-3">
                 <div class="d-flex align-items-center">
-                    <a class="btn btn-topbar has-transition btn-icon btn-circle btn-light p-0 hov-bg-primary hov-svg-white d-flex align-items-center justify-content-center" 
+                    <a class="btn btn-topbar has-transition btn-icon btn-circle btn-light p-0 hov-bg-primary hov-svg-white d-flex align-items-center justify-content-center"
                         href="{{ route('cache.clear') }}" data-toggle="tooltip" data-title="{{ translate('Clear Cache') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                             <path id="_74846e5be5db5b666d3893933be03656" data-name="74846e5be5db5b666d3893933be03656" d="M7.719,8.911H8.9V10.1H7.719v1.185H6.539V10.1H5.36V8.911h1.18V7.726h1.18ZM5.36,13.652h1.18v1.185H5.36v1.185H4.18V14.837H3V13.652H4.18V12.467H5.36Zm13.626-2.763H10.138V10.3a1.182,1.182,0,0,1,1.18-1.185h2.36V2h1.77V9.111h2.36a1.182,1.182,0,0,1,1.18,1.185ZM18.4,18H16.044a9.259,9.259,0,0,0,.582-2.963.59.59,0,1,0-1.18,0A7.69,7.69,0,0,1,14.755,18H12.5a9.259,9.259,0,0,0,.582-2.963.59.59,0,1,0-1.18,0A7.69,7.69,0,0,1,11.216,18H8.958a22.825,22.825,0,0,0,1.163-5.926H18.99A19.124,19.124,0,0,1,18.4,18Z" transform="translate(-3 -2)" fill="#717580"/>
@@ -59,13 +59,13 @@
             <!-- Topbar menus -->
             <div class="aiz-topbar-item mr-2 d-none d-xl-block">
                 <div class="d-flex align-items-center h-100">
-                    <a class="aiz-topbar-menu fs-13 fw-600 d-flex align-items-center justify-content-center {{ areActiveRoutes(['admin.dashboard']) }}" 
+                    <a class="aiz-topbar-menu fs-13 fw-600 d-flex align-items-center justify-content-center {{ areActiveRoutes(['admin.dashboard']) }}"
                         href="{{ route('admin.dashboard') }}">{{ translate('Dashboard') }}</a>
-                    <a class="aiz-topbar-menu fs-13 fw-600 d-flex align-items-center justify-content-center {{ areActiveRoutes(['all_orders.index']) }}" 
+                    <a class="aiz-topbar-menu fs-13 fw-600 d-flex align-items-center justify-content-center {{ areActiveRoutes(['all_orders.index']) }}"
                         href="{{ route('all_orders.index') }}">{{ translate('Orders') }}</a>
-                    {{-- <a class="aiz-topbar-menu fs-13 fw-600 d-flex align-items-center justify-content-center {{ areActiveRoutes(['admin.dashboard']) }}" 
+                    {{-- <a class="aiz-topbar-menu fs-13 fw-600 d-flex align-items-center justify-content-center {{ areActiveRoutes(['admin.dashboard']) }}"
                         href="{{ route('admin.dashboard') }}">{{ translate('Earnings') }}</a> --}}
-                    <a class="aiz-topbar-menu fs-13 fw-600 d-flex align-items-center justify-content-center {{ (url()->current() == url('/admin/website/custom-pages/edit/home')) ? 'active' : '' }}" 
+                    <a class="aiz-topbar-menu fs-13 fw-600 d-flex align-items-center justify-content-center {{ (url()->current() == url('/admin/website/custom-pages/edit/home')) ? 'active' : '' }}"
                         href="{{ route('custom-pages.edit', ['id'=>'home', 'lang'=>env('DEFAULT_LANGUAGE'), 'page'=>'home']) }}">{{ translate('Homepage Settings') }}</a>
                 </div>
             </div>
@@ -135,7 +135,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="text-center border-top">
                             <a href="{{ route('admin.all-notification') }}" class="text-reset d-block py-2">
                                 {{ translate('View All Notifications') }}
@@ -158,7 +158,7 @@
                     <a class="dropdown-toggle no-arrow" data-toggle="dropdown" href="javascript:void(0);"
                         role="button" aria-haspopup="false" aria-expanded="false">
                         <span class="btn btn-topbar btn-circle btn-light p-0 d-flex justify-content-center align-items-center" data-toggle="tooltip" data-title="{{ translate('Language') }}">
-                            <img src="{{ static_asset('assets/img/flags/' . $locale . '.png') }}" height="11">
+                            <img src="{{ asset('assets/img/flags/' . $locale . '.png') }}" height="11">
                         </span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-menu-xs">
@@ -167,7 +167,7 @@
                             <li>
                                 <a href="javascript:void(0)" data-flag="{{ $language->code }}"
                                     class="dropdown-item @if ($locale == $language->code) active @endif">
-                                    <img src="{{ static_asset('assets/img/flags/' . $language->code . '.png') }}"
+                                    <img src="{{ asset('assets/img/flags/' . $language->code . '.png') }}"
                                         class="mr-2">
                                     <span class="language">{{ $language->name }}</span>
                                 </a>
@@ -189,7 +189,7 @@
                             </span>
                             <span class="size-40px rounded-content overflow-hidden ml-md-2">
                                 <img src="{{ uploaded_asset(Auth::user()->avatar_original) }}" class="img-fit"
-                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                             </span>
                         </span>
                     </a>

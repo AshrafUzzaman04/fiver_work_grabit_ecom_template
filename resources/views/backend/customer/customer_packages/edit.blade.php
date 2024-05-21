@@ -21,12 +21,12 @@
                         </ul>
                     </div>
                 @endif
-                
+
                 <ul class="nav nav-tabs nav-fill language-bar">
                   @foreach (get_all_active_language() as $key => $language)
                     <li class="nav-item">
                       <a class="nav-link text-reset @if ($language->code == $lang) active @endif py-3" href="{{ route('customer_packages.edit', ['id'=>$customer_package->id, 'lang'=> $language->code] ) }}">
-                        <img src="{{ static_asset('assets/img/flags/'.$language->code.'.png') }}" height="11" class="mr-1">
+                        <img src="{{ asset('assets/img/flags/'.$language->code.'.png') }}" height="11" class="mr-1">
                         <span>{{$language->name}}</span>
                       </a>
                     </li>
@@ -39,7 +39,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-from-label">
                             {{translate('Package Name')}}
-                            <span class="text-danger">*</span> 
+                            <span class="text-danger">*</span>
                             <i class="las la-language text-danger" title="{{translate('Translatable')}}"></i>
                         </label>
                         <div class="col-sm-9">
@@ -49,7 +49,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-from-label">
                             {{translate('Amount')}}
-                            <span class="text-danger">*</span> 
+                            <span class="text-danger">*</span>
                         </label>
                         <div class="col-sm-9">
                             <input type="number" lang="en" min="0" step="0.01" placeholder="{{translate('Amount')}}" value="{{ $customer_package->amount }}" id="amount" name="amount" class="form-control" required>
@@ -58,7 +58,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-from-label">
                             {{translate('Product Upload')}}
-                            <span class="text-danger">*</span> 
+                            <span class="text-danger">*</span>
                         </label>
                         <div class="col-sm-9">
                             <input type="number" lang="en" min="0" step="1" placeholder="{{translate('Product Upload')}}" value="{{ $customer_package->product_upload }}" id="product_upload" name="product_upload" class="form-control" required>
@@ -67,7 +67,7 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="signinSrEmail">
                             {{translate('Package logo')}}
-                            <span class="text-danger">*</span> 
+                            <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
                             <div class="input-group" data-toggle="aizuploader" data-type="image">

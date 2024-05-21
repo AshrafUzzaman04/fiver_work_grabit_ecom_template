@@ -47,9 +47,9 @@
                         <a href="{{ route('shop.visit', $shop->slug) }}" class="overflow-hidden size-64px rounded-content" style="border: 1px solid #e5e5e5;
                             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.06);min-width: fit-content;">
                             <img class="lazyload h-64px  mx-auto"
-                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                src="{{ asset('assets/img/placeholder.jpg') }}"
                                 data-src="{{ uploaded_asset($shop->logo) }}"
-                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                         </a>
                         <div class="ml-3">
                             <!-- Shop Name & Verification Status -->

@@ -10,13 +10,13 @@
                <div class="mt-2">
                    <span> {{ $ticket->user->name }} </span>
                    <span class="ml-2"> {{ $ticket->created_at }} </span>
-                   <span class="badge badge-inline badge-secondary ml-2 text-capitalize"> 
-                       {{ translate(ucfirst($ticket->status)) }} 
+                   <span class="badge badge-inline badge-secondary ml-2 text-capitalize">
+                       {{ translate(ucfirst($ticket->status)) }}
                    </span>
                </div>
             </div>
         </div>
-        
+
         <div class="card-body">
             @can('reply_to_support_tickets')
                 <form action="{{ route('support_ticket.admin_store') }}" method="post" id="ticket-reply-form" enctype="multipart/form-data">
@@ -41,9 +41,9 @@
                     </div>
                     <div class="form-group mb-0 text-right">
                         <button type="submit" class="btn btn-sm btn-dark" onclick="submit_reply('pending')">
-                            {{ translate('Submit as') }} 
+                            {{ translate('Submit as') }}
                             <strong>
-                                <span class="text-capitalize"> 
+                                <span class="text-capitalize">
                                     {{ translate($ticket->status) }}
                                 </span>
                             </strong>
@@ -65,7 +65,7 @@
                                     @if($ticketreply->user->avatar_original != null)
                                         <span class="avatar avatar-sm mr-3"><img src="{{ uploaded_asset($ticketreply->user->avatar_original) }}"></span>
                                     @else
-                                        <span class="avatar avatar-sm mr-3"><img src="{{ static_asset('assets/img/avatar-place.png') }}"></span>
+                                        <span class="avatar avatar-sm mr-3"><img src="{{ asset('assets/img/avatar-place.png') }}"></span>
                                     @endif
                                 </a>
                                 <div class="media-body">
@@ -97,7 +97,7 @@
                                 @if($ticket->user->avatar_original != null)
                                     <span class="avatar avatar-sm m-3"><img src="{{ uploaded_asset($ticket->user->avatar_original) }}"></span>
                                 @else
-                                    <span class="avatar avatar-sm m-3"><img src="{{ static_asset('assets/img/avatar-place.png') }}"></span>
+                                    <span class="avatar avatar-sm m-3"><img src="{{ asset('assets/img/avatar-place.png') }}"></span>
                                 @endif
                             </a>
                             <div class="media-body">

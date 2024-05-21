@@ -48,7 +48,7 @@
                                                 title="{{ $top_customer->name }}">
                                                 <img src="{{ uploaded_asset($top_customer->avatar_original) }}"
                                                     alt="{{ translate('customer') }}" class="h-100 img-fit lazyload"
-                                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                             </div>
                                         @endforeach
                                     </div>
@@ -314,7 +314,7 @@
                                                     title="{{ $top_seller->name }}">
                                                     <img src="{{ uploaded_asset($top_seller->avatar_original) }}"
                                                         alt="{{ translate('seller') }}" class="h-100 img-fit lazyload"
-                                                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                        onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                                 </div>
                                             @endforeach
                                         </div>
@@ -331,7 +331,7 @@
                             @else
                                 <div class="d-flex flex-column align-items-center justify-content-center h-100">
                                     <div class="h-200px">
-                                        <img src="{{ static_asset('assets/img/multivendor.jpg') }}"
+                                        <img src="{{ asset('assets/img/multivendor.jpg') }}"
                                             alt="{{ translate('multivendor') }}" class="h-100 img-fit">
                                     </div>
                                     <a href="{{ route('activation.index') }}"

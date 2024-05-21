@@ -7,9 +7,9 @@
                 @if ($detailedProduct->added_by == 'seller' && get_setting('vendor_system_activation') == 1)
                 <a href="{{ route('shop.visit', $detailedProduct->user->shop->slug) }}" class="avatar avatar-md mr-2 overflow-hidden border float-left float-lg-none float-xl-left">
                     <img class="lazyload"
-                        src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                        src="{{ asset('assets/img/placeholder.jpg') }}"
                         data-src="{{ uploaded_asset($detailedProduct->user->shop->logo) }}"
-                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                        onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                 </a>
                 @endif
                 <!-- Shop Name & Verification status -->

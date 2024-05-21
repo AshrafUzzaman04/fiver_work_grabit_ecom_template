@@ -17,10 +17,10 @@
                 </div>
             </div>
             <!-- Product Section -->
-            <div class="px-sm-3">
-                <div class="aiz-carousel sm-gutters-16 arrow-none" data-items="6" data-xl-items="5" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='false'>
+            <div class="px-sm-3 py-3">
+                <div class="aiz-carousel sm-gutters-16 arrow-none" data-items="5" data-xl-items="5" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='false'>
                     @foreach ($best_selling_products as $key => $product)
-                        <div class="carousel-box px-3 position-relative has-transition hov-animate-outline border-right border-top border-bottom @if($key == 0) border-left @endif">
+                        <div class="carousel-box px-3 position-relative has-transition">
                             @include('frontend.'.get_setting('homepage_select').'.partials.product_box_1',['product' => $product])
                         </div>
                     @endforeach

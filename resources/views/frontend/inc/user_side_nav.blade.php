@@ -21,10 +21,10 @@
             <span class="avatar avatar-md mb-3">
                 @if ($user->avatar_original != null)
                     <img src="{{ $user_avatar }}"
-                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                        onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                 @else
-                    <img src="{{ static_asset('assets/img/avatar-place.png') }}" class="image rounded-circle"
-                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                    <img src="{{ asset('assets/img/avatar-place.png') }}" class="image rounded-circle"
+                        onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                 @endif
             </span>
             <!-- Name -->
@@ -41,7 +41,7 @@
         <!-- Menus -->
         <div class="sidemnenu">
             <ul class="aiz-side-nav-list mb-3 pb-3 border-bottom" data-toggle="aiz-side-menu">
-                
+
                 <!-- Dashboard -->
                 <li class="aiz-side-nav-item">
                     <a href="{{ route('dashboard') }}" class="aiz-side-nav-link {{ areActiveRoutes(['dashboard']) }}">
@@ -95,7 +95,7 @@
                         <span class="aiz-side-nav-text ml-3">{{ translate('Downloads') }}</span>
                     </a>
                 </li>
-                
+
                 <!-- Refund Requests -->
                 @if (addon_is_activated('refund_request'))
                     <li class="aiz-side-nav-item">
@@ -342,7 +342,7 @@
                         @endif
                     </a>
                 </li>
-                
+
                 <!-- Manage Profile -->
                 <li class="aiz-side-nav-item">
                     <a href="{{ route('profile') }}" class="aiz-side-nav-link {{ areActiveRoutes(['profile']) }}">
@@ -370,7 +370,7 @@
                 </li>
 
             </ul>
-        
+
             <!-- logout -->
             <a href="{{ route('logout') }}" class="btn btn-primary btn-block fs-14 fw-700 mb-5 mb-md-0" style="border-radius: 25px;">{{ translate('Sign Out') }}</a>
         </div>

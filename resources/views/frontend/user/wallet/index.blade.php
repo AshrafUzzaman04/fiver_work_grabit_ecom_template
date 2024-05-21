@@ -13,7 +13,7 @@
         <!-- Wallet Balance -->
         <div class="col-md-4 mx-auto mb-4">
             <div class="bg-dark text-white overflow-hidden text-center p-4 h-100">
-                <img src="{{ static_asset('assets/img/wallet-icon.png') }}" alt="">
+                <img src="{{ asset('assets/img/wallet-icon.png') }}" alt="">
                 <div class="py-2">
                     <div class="fs-14 fw-400 text-center">{{ translate('Wallet Balance') }}</div>
                     <div class="fs-30 fw-700 text-center">{{ single_price(Auth::user()->balance) }}</div>
@@ -98,7 +98,7 @@
 @section('modal')
     <!-- Wallet Recharge Modal -->
     @include('frontend.'.get_setting('homepage_select').'.partials.wallet_modal')
-    
+
     <!-- Offline Wallet Recharge Modal -->
     <div class="modal fade" id="offline_wallet_recharge_modal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">

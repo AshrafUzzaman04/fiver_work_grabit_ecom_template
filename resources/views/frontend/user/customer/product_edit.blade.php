@@ -8,13 +8,13 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Language -->
     <ul class="nav nav-tabs nav-fill language-bar">
 		@foreach (get_all_active_language() as $key => $language)
             <li class="nav-item">
                 <a class="nav-link text-reset rounded-0 @if ($language->code == $lang) active @endif py-3" href="{{ route('customer_products.edit', ['id'=>$product->id, 'lang'=> $language->code] ) }}">
-                    <img src="{{ static_asset('assets/img/flags/'.$language->code.'.png') }}" height="11" class="mr-1">
+                    <img src="{{ asset('assets/img/flags/'.$language->code.'.png') }}" height="11" class="mr-1">
                     <span>{{ $language->name }}</span>
                 </a>
             </li>
@@ -25,7 +25,7 @@
         <input name="_method" type="hidden" value="PATCH">
         <input type="hidden" name="lang" value="{{ $lang }}">
         @csrf
-        
+
         <!-- General -->
         <div class="card rounded-0 shadow-none border">
             <div class="card-header border-bottom-0">
@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Images -->
         <div class="card rounded-0 shadow-none border">
             <div class="card-header border-bottom-0">
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Videos -->
         <div class="card rounded-0 shadow-none border">
             <div class="card-header border-bottom-0">
@@ -153,7 +153,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Meta Tags -->
         <div class="card rounded-0 shadow-none border">
             <div class="card-header border-bottom-0">
@@ -194,7 +194,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Price -->
         <div class="card rounded-0 shadow-none border">
             <div class="card-header border-bottom-0">
@@ -209,7 +209,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Description -->
         <div class="card rounded-0 shadow-none border">
             <div class="card-header border-bottom-0">
@@ -226,7 +226,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- PDF Specification -->
         <div class="card rounded-0 shadow-none border">
             <div class="card-header border-bottom-0">
@@ -249,7 +249,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Save Button -->
         <div class="mar-all text-right">
             <button type="submit" name="button" class="btn btn-primary rounded-0 px-4">{{ translate('Update Product') }}</button>

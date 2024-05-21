@@ -33,11 +33,11 @@
                                         <!-- Shop logo & Verification Status -->
                                         <div class="position-relative mx-auto size-100px size-md-120px">
                                             <a href="{{ route('shop.visit', $shop->slug) }}" class="d-flex mx-auto justify-content-center align-item-center size-100px size-md-120px border overflow-hidden hov-scale-img" tabindex="0" style="border: 1px solid #e5e5e5; border-radius: 50%; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.06);">
-                                                <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}"
+                                                <img src="{{ asset('assets/img/placeholder-rect.jpg') }}"
                                                     data-src="{{ uploaded_asset($shop->logo) }}"
                                                     alt="{{ $shop->name }}"
                                                     class="img-fit lazyload has-transition"
-                                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';">
+                                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder-rect.jpg') }}';">
                                             </a>
                                             <div class="absolute-top-right z-1 mr-md-2 mt-1 rounded-content bg-white">
                                                 @if ($shop->verification_status == 1)

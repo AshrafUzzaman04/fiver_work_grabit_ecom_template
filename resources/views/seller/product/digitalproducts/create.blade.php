@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Error Meassages -->
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -33,7 +33,7 @@
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('General')}}</h5>
                     </div>
-        
+
                     <div class="card-body">
                         <div class="form-group row">
                             <label class="col-lg-3 col-from-label">{{translate('Product Name')}} <span class="text-danger">*</span></label>
@@ -84,7 +84,7 @@
                                 <small class="text-muted">{{translate('These images are visible in product details page gallery. Use 600x600 sizes images.')}}</small>
                             </div>
                         </div>
-        
+
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label" for="signinSrEmail">{{translate('Thumbnail Image')}} <small>(300x300)</small></label>
                             <div class="col-lg-9">
@@ -135,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('Price')}}</h5>
@@ -205,7 +205,7 @@
                         <h5 class="mb-0 h6">{{ translate('Frequently Brought') }}</h5>
                     </div>
                     <div class="w-100">
-                        <div class="d-flex my-3"> 
+                        <div class="d-flex my-3">
                             <div class="align-items-center d-flex mar-btm ml-4 mr-5 radio">
                                 <input id="fq_brought_select_products" type="radio" name="frequently_brought_selection_type" value="product" onchange="fq_brought_product_selection_type()" checked >
                                 <label for="fq_brought_select_products" class="fs-14 fw-500 mb-0 ml-2">{{translate('Select Product')}}</label>
@@ -220,20 +220,20 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="fq_brought_select_product_div">
-    
+
                                         <div id="selected-fq-brought-products">
-    
+
                                         </div>
-    
-                                        <button 
-                                            type="button" 
+
+                                        <button
+                                            type="button"
                                             class="btn btn-block border border-dashed hov-bg-soft-secondary fs-14 rounded-0 d-flex align-items-center justify-content-center"
                                             onclick="showFqBroughtProductModal()">
                                             <i class="las la-plus"></i>
                                             <span class="ml-2">{{ translate('Add More') }}</span>
                                         </button>
                                     </div>
-    
+
                                     {{-- Select Category for Frequently Brought Product --}}
                                     <div class="fq_brought_select_category_div d-none">
                                         <div class="form-group row">
@@ -250,7 +250,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -299,7 +299,7 @@
 
 @section('script')
 <!-- Treeview js -->
-<script src="{{ static_asset('assets/js/hummingbird-treeview.js') }}"></script>
+<script src="{{ asset('assets/js/hummingbird-treeview.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $("#treeview").hummingbird();
@@ -349,6 +349,6 @@
                 AIZ.plugins.fooTable();
             });
         }
-        
+
 </script>
 @endsection

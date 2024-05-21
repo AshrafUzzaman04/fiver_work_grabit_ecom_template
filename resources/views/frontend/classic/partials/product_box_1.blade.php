@@ -1,7 +1,18 @@
 @php
     $cart_added = [];
 @endphp
-<div class="aiz-card-box h-auto bg-white py-3 hov-scale-img">
+<style>
+    .aiz-card-box:hover{
+        box-shadow: 0 5px 19px 3px rgba(0, 0, 0, .1);
+        z-index: 2;
+    }
+    .aiz-card-box:hover #arrow-pro-item{
+        background: #2C54BE;
+        transition: all 0.2s ease-in-out;
+        color: white;
+    }
+</style>
+<div class="aiz-card-box h-auto pb-3 hov-scale-img border" style="background: #F8F8F8">
     <div class="position-relative h-140px h-md-200px img-fit overflow-hidden">
         @php
             $product_url = route('product', $product->slug);
@@ -14,7 +25,7 @@
             <img class="lazyload mx-auto img-fit has-transition"
                 src="{{ get_image($product->thumbnail) }}"
                 alt="{{ $product->getTranslation('name') }}" title="{{ $product->getTranslation('name') }}"
-                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
         </a>
         <!-- Discount percentage tag -->
         @if (discount_in_percentage($product) > 0)
@@ -88,16 +99,19 @@
 
     <div class="p-2 p-md-3 text-left">
         <!-- Product name -->
-        <h3 class="fw-400 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px text-center">
+        <h3 class="fw-400 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px text-left mt-0">
             <a href="{{ $product_url }}" class="d-block text-reset hov-text-primary"
                 title="{{ $product->getTranslation('name') }}">{{ $product->getTranslation('name') }}</a>
         </h3>
-        <div class="fs-14 d-flex justify-content-center mt-3">
+        <div class="fs-16 d-flex justify-content-start mt-3 mb-3">
+            <a href="{{ $product_url }}" id="arrow-pro-item" class="px-2 mr-2 d-flex justify-content-center align-items-center" style="max-height: max-content; cursor: pointer;">
+                <span class="fs-16 fw-700">→</span>
+            </a>
             @if ($product->auction_product == 0)
                 <!-- Previous price -->
                 @if (home_base_price($product) != home_discounted_base_price($product))
                     <div class="disc-amount has-transition">
-                        <del class="fw-400 text-secondary mr-1">{{ home_base_price($product) }}</del>
+                        <del class="fw-400 text-secondary mr-1 fs-12">{{ home_base_price($product) }}</del>
                     </div>
                 @endif
                 <!-- price -->

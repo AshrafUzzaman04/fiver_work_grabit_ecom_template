@@ -550,7 +550,7 @@
                             @if ($refund_sticker != null)
                                 <img src="{{ uploaded_asset($refund_sticker) }}" height="36">
                             @else
-                                <img src="{{ static_asset('assets/img/refund-sticker.jpg') }}" height="36">
+                                <img src="{{ asset('assets/img/refund-sticker.jpg') }}" height="36">
                             @endif
                         </a>
                         <a href="{{ route('returnpolicy') }}" class="text-blue hov-text-primary fs-14 ml-3"

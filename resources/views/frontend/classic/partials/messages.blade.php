@@ -6,13 +6,13 @@
                     <div class="block-image">
                         @if (Auth::user()->id != $message->user_id && $message->user->shop != null)
                             <a href="{{ route('shop.visit', $message->user->shop->slug) }}" class="avatar avatar-sm mr-3">
-                                <img  class="" src="{{ uploaded_asset($message->user->shop->logo) }}" 
-                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                <img  class="" src="{{ uploaded_asset($message->user->shop->logo) }}"
+                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                             </a>
                         @else
                         <span class="avatar avatar-sm mr-3">
-                            <img class="" @if($message->user != null) src="{{ uploaded_asset($message->user->avatar_original) }}" @endif 
-                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                            <img class="" @if($message->user != null) src="{{ uploaded_asset($message->user->avatar_original) }}" @endif
+                                onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                         </span>
                         @endif
                     </div>
@@ -34,13 +34,13 @@
                     <div class="block-image">
                         @if (Auth::user()->id != $message->user_id && $message->user->shop != null)
                             <a href="{{ route('shop.visit', $message->user->shop->slug) }}" class="avatar avatar-sm mr-3">
-                                <img  class="" src="{{ uploaded_asset($message->user->shop->logo) }}" 
-                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                <img  class="" src="{{ uploaded_asset($message->user->shop->logo) }}"
+                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                             </a>
                         @else
                             <span class="avatar avatar-sm mr-3">
-                                <img @if($message->user != null) src="{{ uploaded_asset($message->user->avatar_original) }}" @endif 
-                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                <img @if($message->user != null) src="{{ uploaded_asset($message->user->avatar_original) }}" @endif
+                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                             </span>
                         @endif
                     </div>

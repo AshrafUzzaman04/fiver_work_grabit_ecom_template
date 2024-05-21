@@ -19,7 +19,7 @@
                         @foreach (get_all_active_language() as $key => $language)
                         <li class="nav-item">
                             <a class="nav-link text-reset @if ($language->code == $lang) active @endif py-3" href="{{ route('digitalproducts.edit', ['id' => $product->id, 'lang' => $language->code]) }}">
-                                <img src="{{ static_asset('assets/img/flags/'.$language->code.'.png') }}" height="11" class="mr-1">
+                                <img src="{{ asset('assets/img/flags/'.$language->code.'.png') }}" height="11" class="mr-1">
                                 <span>{{$language->name}}</span>
                             </a>
                         </li>
@@ -248,13 +248,13 @@
                         <h5 class="mb-0 h6">{{ translate('Frequently Brought') }}</h5>
                     </div>
                     <div class="w-100">
-                        <div class="d-flex my-3"> 
+                        <div class="d-flex my-3">
                             <div class="radio mar-btm mr-5 ml-4 d-flex align-items-center">
                                 <input
                                     id="fq_brought_select_products"
                                     type="radio"
-                                    name="frequently_brought_selection_type" 
-                                    value="product" 
+                                    name="frequently_brought_selection_type"
+                                    value="product"
                                     onchange="fq_brought_product_selection_type()"
                                     @if($product->frequently_brought_selection_type == 'product') checked @endif
                                 >
@@ -272,15 +272,15 @@
                                 <label for="fq_brought_select_category" class="fs-14 fw-500 mb-0 ml-2">{{translate('Select Category')}}</label>
                             </div>
                         </div>
-                        
+
                         <div class="px-3 px-md-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="fq_brought_select_product_div d-none">
-                                        @php 
+                                        @php
                                             $fq_brought_products = $product->frequently_brought_products()->where('category_id', null)->get();
                                         @endphp
-        
+
                                         <div id="selected-fq-brought-products">
                                             @if(count($fq_brought_products) > 0)
                                                 <div class="table-responsive mb-4">
@@ -299,8 +299,8 @@
                                                                     <input type="hidden" name="fq_brought_product_ids[]" value="{{ $fQBproduct->frequently_brought_product->id }}">
                                                                     <td class="w-150px pl-0" style="vertical-align: middle;">
                                                                         <p class="d-block size-48px">
-                                                                            <img src="{{ uploaded_asset($fQBproduct->frequently_brought_product->thumbnail_img) }}" alt="{{ translate('Image')}}" 
-                                                                                class="h-100 img-fit lazyload" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                                            <img src="{{ uploaded_asset($fQBproduct->frequently_brought_product->thumbnail_img) }}" alt="{{ translate('Image')}}"
+                                                                                class="h-100 img-fit lazyload" onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                                                         </p>
                                                                     </td>
                                                                     <td style="vertical-align: middle;">
@@ -321,22 +321,22 @@
                                                 </div>
                                             @endif
                                         </div>
-        
-                                        <button 
-                                            type="button" 
+
+                                        <button
+                                            type="button"
                                             class="btn btn-block border border-dashed hov-bg-soft-secondary fs-14 rounded-0 d-flex align-items-center justify-content-center"
                                             onclick="showFqBroughtProductModal()">
                                             <i class="las la-plus"></i>
                                             <span class="ml-2">{{ translate('Add More') }}</span>
                                         </button>
                                     </div>
-        
+
                                     {{-- Select Category for Frequently Brought Product --}}
                                     <div class="fq_brought_select_category_div d-none">
-                                        @php 
-                                            $fq_brought_product_category_id = $product->frequently_brought_products()->where('category_id','!=', null)->first(); 
+                                        @php
+                                            $fq_brought_product_category_id = $product->frequently_brought_products()->where('category_id','!=', null)->first();
                                             $fqCategory = $fq_brought_product_category_id != null ? $fq_brought_product_category_id->category_id : null;
-                                            
+
                                         @endphp
                                         <div class="form-group row">
                                             <label class="col-md-2 col-from-label">{{translate('Category')}}</label>
@@ -358,7 +358,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -410,7 +410,7 @@
 
 @section('script')
 <!-- Treeview js -->
-<script src="{{ static_asset('assets/js/hummingbird-treeview.js') }}"></script>
+<script src="{{ asset('assets/js/hummingbird-treeview.js') }}"></script>
 <script type="text/javascript">
 
     $(document).ready(function() {

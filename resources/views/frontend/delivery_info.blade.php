@@ -77,7 +77,7 @@
                                         $seller_product_variation[] = $cartItem['variation'];
                                     }
                                 }
-                                
+
                                 $pickup_point_list = array();
                                 if (get_setting('pickup_point') == 1) {
                                     $pickup_point_list = get_all_pickup_points();
@@ -109,7 +109,7 @@
                                                         <img src="{{ get_image($product->thumbnail) }}"
                                                             class="img-fit size-60px"
                                                             alt="{{  $product->getTranslation('name')  }}"
-                                                            onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                            onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                                     </span>
                                                     <span class="fs-14 fw-400 text-dark">
                                                         {{ $product->getTranslation('name') }}
@@ -270,7 +270,7 @@
                                                                 <img src="{{ get_image($product->thumbnail) }}"
                                                                     class="img-fit size-60px"
                                                                     alt="{{  $product->getTranslation('name')  }}"
-                                                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                                             </span>
                                                             <span class="fs-14 fw-400 text-dark">
                                                                 {{ $product->getTranslation('name') }}
@@ -373,7 +373,7 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                
+
                                                 <!-- Carrier Wise Shipping -->
                                                 @if (get_setting('shipping_type') == 'carrier_wise_shipping')
                                                     <div class="row pt-3 carrier_id_{{ $key }}">

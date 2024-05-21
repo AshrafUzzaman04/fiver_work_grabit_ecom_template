@@ -2,8 +2,8 @@
     <div class="d-flex flex-lg-wrap flex-xxl-nowrap align-items-center justify-content-between" style="margin-bottom: 0.75rem;">
         <div class="d-flex align-items-center mr-2">
             <div class="rounded-2 border overflow-hidden mr-3" style="min-height: 48px !important; min-width: 48px !important;max-height: 48px !important; max-width: 48px !important;">
-                <img src="{{ uploaded_asset($inhouse_top_category->cover_image) }}" alt="{{ translate('category') }}" 
-                    class="h-100 img-fit lazyload" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                <img src="{{ uploaded_asset($inhouse_top_category->cover_image) }}" alt="{{ translate('category') }}"
+                    class="h-100 img-fit lazyload" onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
             </div>
             <h4 class="fs-13 fw-600 text-dark mb-0 text-truncate-2">
                 @php

@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <!-- Image -->
-                    <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}"
+                    <img src="{{ asset('assets/img/placeholder-rect.jpg') }}"
                         data-src="{{ uploaded_asset($blog->banner) }}"
                         alt="{{ $blog->title }}"
                         class="img-fluid lazyload w-100 mt-3 mb-4">
@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            
+
             <!-- recent posts -->
             <div class="col-xxl-3 col-lg-4">
                 <div class="p-3 border">
@@ -91,7 +91,7 @@
                             <div class="d-flex">
                                 <div class="">
                                     <a href="{{ url("blog").'/'. $recent_blog->slug }}" class="text-reset d-block overflow-hidden size-80px size-xl-90px mr-2">
-                                        <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}"
+                                        <img src="{{ asset('assets/img/placeholder-rect.jpg') }}"
                                             data-src="{{ uploaded_asset($recent_blog->banner) }}"
                                             alt="{{ $recent_blog->title }}"
                                             class="img-fit lazyload h-100 has-transition">

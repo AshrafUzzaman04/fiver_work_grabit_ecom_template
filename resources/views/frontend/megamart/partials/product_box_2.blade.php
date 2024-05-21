@@ -14,7 +14,7 @@
             <img class="lazyload mx-auto img-fit has-transition"
                 src="{{ get_image($product->thumbnail) }}"
                 alt="{{ $product->getTranslation('name') }}" title="{{ $product->getTranslation('name') }}"
-                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
         </a>
         <!-- Discount percentage tag -->
         @if (discount_in_percentage($product) > 0)

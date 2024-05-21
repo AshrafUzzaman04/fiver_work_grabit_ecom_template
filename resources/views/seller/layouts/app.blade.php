@@ -21,11 +21,11 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
 
 	<!-- aiz core css -->
-	<link rel="stylesheet" href="{{ static_asset('assets/css/vendors.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/vendors.css') }}">
     @if(\App\Models\Language::where('code', Session::get('locale', Config::get('app.locale')))->first()->rtl == 1)
-    <link rel="stylesheet" href="{{ static_asset('assets/css/bootstrap-rtl.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-rtl.min.css') }}">
     @endif
-	<link rel="stylesheet" href="{{ static_asset('assets/css/aiz-seller.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/aiz-seller.css') }}">
 
     <style>
         body {
@@ -91,8 +91,8 @@
     @yield('modal')
 
 
-	<script src="{{ static_asset('assets/js/vendors.js') }}" ></script>
-	<script src="{{ static_asset('assets/js/aiz-core.js') }}" ></script>
+	<script src="{{ asset('assets/js/vendors.js') }}" ></script>
+	<script src="{{ asset('assets/js/aiz-core.js') }}" ></script>
 
     @yield('script')
 
@@ -105,7 +105,7 @@
             e.stopPropagation()
             $(this).tab('show')
         })
-        
+
         if ($('#lang-change').length > 0) {
             $('#lang-change .dropdown-menu a').each(function() {
                 $(this).on('click', function(e){

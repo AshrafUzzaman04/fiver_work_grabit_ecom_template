@@ -27,7 +27,7 @@
                                 </a>
                             </div>
                             <!-- add to cart -->
-                            <a class="cart-btn absolute-bottom-left w-100 h-35px aiz-p-hov-icon text-white fs-13 fw-700 d-flex justify-content-center align-items-center" 
+                            <a class="cart-btn absolute-bottom-left w-100 h-35px aiz-p-hov-icon text-white fs-13 fw-700 d-flex justify-content-center align-items-center"
                                 href="javascript:void(0)" onclick="showAddToCartModal({{ $wishlist->product->id }})">{{ translate('Add to Cart') }}</a>
                         </div>
                         <!-- Product Name -->
@@ -50,7 +50,7 @@
         <div class="row">
             <div class="col">
                 <div class="text-center bg-white p-4 border">
-                    <img class="mw-100 h-200px" src="{{ static_asset('assets/img/nothing.svg') }}" alt="Image">
+                    <img class="mw-100 h-200px" src="{{ asset('assets/img/nothing.svg') }}" alt="Image">
                     <h5 class="mb-0 h5 mt-3">{{ translate("There isn't anything added yet")}}</h5>
                 </div>
             </div>

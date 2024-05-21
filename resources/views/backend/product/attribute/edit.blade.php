@@ -13,7 +13,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-reset @if ($language->code == $lang) active @endif py-3"
                                 href="{{ route('attributes.edit', ['id' => $attribute->id, 'lang' => $language->code]) }}">
-                                <img src="{{ static_asset('assets/img/flags/' . $language->code . '.png') }}" height="11"
+                                <img src="{{ asset('assets/img/flags/' . $language->code . '.png') }}" height="11"
                                     class="mr-1">
                                 <span>{{ $language->name }}</span>
                             </a>
@@ -32,7 +32,7 @@
                                 class="form-control" required value="{{ $attribute->getTranslation('name', $lang) }}">
                         </div>
                     </div>
-                    
+
                     <div class="form-group mb-0 text-right">
                         <button type="submit" class="btn btn-primary">{{ translate('Save') }}</button>
                     </div>

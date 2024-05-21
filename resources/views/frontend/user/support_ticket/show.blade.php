@@ -14,7 +14,7 @@
             </div>
         </div>
         <hr class="mx-4">
-        
+
         <div class="card-body">
             <!-- Reply form -->
             <form action="{{route('support_ticket.seller_store')}}" method="POST" enctype="multipart/form-data">
@@ -41,7 +41,7 @@
                     <button type="submit" class="btn btn-sm btn-primary rounded-0 w-150px" onclick="submit_reply('pending')">{{ translate('Send Reply') }}</button>
                 </div>
             </form>
-            
+
             <div class="pad-top">
                 <ul class="list-group list-group-flush mt-3">
                     <!-- Replies -->
@@ -51,11 +51,11 @@
                                 <a class="media-left" href="#">
                                     @if($ticketreply->user->avatar_original != null)
                                         <span class="avatar avatar-sm mr-3">
-                                            <img src="{{ uploaded_asset($ticketreply->user->avatar_original) }}" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                            <img src="{{ uploaded_asset($ticketreply->user->avatar_original) }}" onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                                         </span>
                                     @else
                                         <span class="avatar avatar-sm mr-3">
-                                            <img src="{{ static_asset('assets/img/avatar-place.png') }}">
+                                            <img src="{{ asset('assets/img/avatar-place.png') }}">
                                         </span>
                                     @endif
                                 </a>
@@ -89,11 +89,11 @@
                             <a class="media-left" href="#">
                                 @if($ticket->user->avatar_original != null)
                                     <span class="avatar avatar-sm mr-3">
-                                        <img src="{{ uploaded_asset($ticket->user->avatar_original) }}" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
+                                        <img src="{{ uploaded_asset($ticket->user->avatar_original) }}" onerror="this.onerror=null;this.src='{{ asset('assets/img/avatar-place.png') }}';">
                                     </span>
                                 @else
                                     <span class="avatar avatar-sm mr-3">
-                                        <img src="{{ static_asset('assets/img/avatar-place.png') }}">
+                                        <img src="{{ asset('assets/img/avatar-place.png') }}">
                                     </span>
                                 @endif
                             </a>
@@ -119,7 +119,7 @@
                             @endforeach
                         </div>
                     </li>
-                    
+
                 </ul>
             </div>
 

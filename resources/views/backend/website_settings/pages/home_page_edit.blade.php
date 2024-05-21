@@ -4,7 +4,7 @@
 <div class="row">
 	<div class="col-xl-10 mx-auto">
 		<h6 class="fw-600">{{ translate('Home Page Settings') }}</h6>
-		@php 
+		@php
 			$activeLanguages = get_all_active_language();
 			$defaultLanguage = env('DEFAULT_LANGUAGE');
 		@endphp
@@ -20,7 +20,7 @@
 						<li class="nav-item">
 							<a class="nav-link text-reset @if ($language->code == $lang) active @endif py-3"
 								href="{{route('custom-pages.edit', ['id'=>$page->slug, 'lang'=>$language->code, 'page'=>'home'] )}}">
-								<img src="{{ static_asset('assets/img/flags/' . $language->code . '.png') }}"
+								<img src="{{ asset('assets/img/flags/' . $language->code . '.png') }}"
 									height="11" class="mr-1">
 								<span>{{ $language->name }}</span>
 							</a>
@@ -129,7 +129,7 @@
 						<li class="nav-item">
 							<a class="nav-link text-reset @if ($language->code == $lang) active @endif py-3"
 								href="{{route('custom-pages.edit', ['id'=>$page->slug, 'lang'=>$language->code, 'page'=>'home'] )}}">
-								<img src="{{ static_asset('assets/img/flags/' . $language->code . '.png') }}"
+								<img src="{{ asset('assets/img/flags/' . $language->code . '.png') }}"
 									height="11" class="mr-1">
 								<span>{{ $language->name }}</span>
 							</a>
@@ -185,7 +185,7 @@
 						<li class="nav-item">
 							<a class="nav-link text-reset @if ($language->code == $lang) active @endif py-3"
 								href="{{route('custom-pages.edit', ['id'=>$page->slug, 'lang'=>$language->code, 'page'=>'home'] )}}">
-								<img src="{{ static_asset('assets/img/flags/' . $language->code . '.png') }}"
+								<img src="{{ asset('assets/img/flags/' . $language->code . '.png') }}"
 									height="11" class="mr-1">
 								<span>{{ $language->name }}</span>
 							</a>
@@ -291,7 +291,7 @@
 						<li class="nav-item">
 							<a class="nav-link text-reset @if ($language->code == $lang) active @endif py-3"
 								href="{{route('custom-pages.edit', ['id'=>$page->slug, 'lang'=>$language->code, 'page'=>'home'] )}}">
-								<img src="{{ static_asset('assets/img/flags/' . $language->code . '.png') }}"
+								<img src="{{ asset('assets/img/flags/' . $language->code . '.png') }}"
 									height="11" class="mr-1">
 								<span>{{ $language->name }}</span>
 							</a>
@@ -399,7 +399,7 @@
 						<li class="nav-item">
 							<a class="nav-link text-reset @if ($language->code == $lang) active @endif py-3"
 								href="{{route('custom-pages.edit', ['id'=>$page->slug, 'lang'=>$language->code, 'page'=>'home'] )}}">
-								<img src="{{ static_asset('assets/img/flags/' . $language->code . '.png') }}"
+								<img src="{{ asset('assets/img/flags/' . $language->code . '.png') }}"
 									height="11" class="mr-1">
 								<span>{{ $language->name }}</span>
 							</a>
@@ -508,7 +508,7 @@
 						<li class="nav-item">
 							<a class="nav-link text-reset @if ($language->code == $lang) active @endif py-3"
 								href="{{route('custom-pages.edit', ['id'=>$page->slug, 'lang'=>$language->code, 'page'=>'home'] )}}">
-								<img src="{{ static_asset('assets/img/flags/' . $language->code . '.png') }}"
+								<img src="{{ asset('assets/img/flags/' . $language->code . '.png') }}"
 									height="11" class="mr-1">
 								<span>{{ $language->name }}</span>
 							</a>
@@ -517,7 +517,7 @@
 				</ul>
 				<form action="{{ route('business_settings.update') }}" method="POST" enctype="multipart/form-data">
 					@csrf
-					
+
 					<div class="form-group">
 						<div class="input-group" data-toggle="aizuploader" data-type="image">
 							<div class="input-group-prepend">
@@ -648,7 +648,7 @@
 						<li class="nav-item">
 							<a class="nav-link text-reset @if ($language->code == $lang) active @endif py-3"
 								href="{{route('custom-pages.edit', ['id'=>$page->slug, 'lang'=>$language->code, 'page'=>'home'] )}}">
-								<img src="{{ static_asset('assets/img/flags/' . $language->code . '.png') }}"
+								<img src="{{ asset('assets/img/flags/' . $language->code . '.png') }}"
 									height="11" class="mr-1">
 								<span>{{ $language->name }}</span>
 							</a>

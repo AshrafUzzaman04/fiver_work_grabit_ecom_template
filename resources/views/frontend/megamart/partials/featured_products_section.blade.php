@@ -1,5 +1,5 @@
 @if (count(get_featured_products()) > 0)
-    @php 
+    @php
         $lang = get_system_language()->code;
         $homeBanner1Images = get_setting('home_banner1_images', null, $lang);
         $xxl_items = 6;
@@ -57,10 +57,10 @@
                                 <div class="carousel-box overflow-hidden hov-scale-img">
                                     <a href="{{ isset(json_decode($home_banner1_links, true)[$key]) ? json_decode($home_banner1_links, true)[$key] : '' }}"
                                         class="d-block text-reset overflow-hidden" style="height: 370px;">
-                                        <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}"
+                                        <img src="{{ asset('assets/img/placeholder-rect.jpg') }}"
                                             data-src="{{ uploaded_asset($value) }}" alt="{{ env('APP_NAME') }} promo"
                                             class="img-fit h-100 lazyload has-transition"
-                                            onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';">
+                                            onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder-rect.jpg') }}';">
                                     </a>
                                 </div>
                             @endforeach
@@ -69,5 +69,5 @@
                 @endif
             </div>
         </div>
-    </section>   
+    </section>
 @endif

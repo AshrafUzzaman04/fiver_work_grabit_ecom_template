@@ -16,7 +16,7 @@
             direction: <?php echo  $direction ?>;
             text-align: <?php echo  $text_align ?>;
 			padding:0;
-			margin:0; 
+			margin:0;
 		}
 		.gry-color *,
 		.gry-color{
@@ -63,7 +63,7 @@
 						@if($logo != null)
 							<img src="{{ uploaded_asset($logo) }}" height="30" style="display:inline-block;">
 						@else
-							<img src="{{ static_asset('assets/img/logo.png') }}" height="30" style="display:inline-block;">
+							<img src="{{ asset('assets/img/logo.png') }}" height="30" style="display:inline-block;">
 						@endif
 					</td>
 					<td style="font-size: 1.5rem;" class="text-right strong">{{  translate('INVOICE') }}</td>
@@ -91,7 +91,7 @@
 					<td class="text-right small">
                         <span class="gry-color small">
                             {{  translate('Payment method') }}:
-                        </span> 
+                        </span>
                         <span class="strong">
                             {{ translate(ucfirst(str_replace('_', ' ', $order->payment_type))) }}
                         </span>
@@ -131,7 +131,7 @@
 		                @if ($orderDetail->product != null)
 							<tr class="">
 								<td>
-                                    {{ $orderDetail->product->name }} 
+                                    {{ $orderDetail->product->name }}
                                     @if($orderDetail->variation != null) ({{ $orderDetail->variation }}) @endif
                                     <br>
                                     <small>

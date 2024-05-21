@@ -48,11 +48,11 @@
                         <span class="d-flex align-items-center">
                             <a href="{{ route('product', $product->slug) }}"
                                 class="text-reset d-flex align-items-center flex-grow-1">
-                                <img src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                <img src="{{ asset('assets/img/placeholder.jpg') }}"
                                     data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                     class="img-fit lazyload size-60px has-transition"
                                     alt="{{ $product->getTranslation('name') }}"
-                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                    onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                 <span class="minw-0 pl-2 flex-grow-1">
                                     <span class="fw-700 fs-13 text-dark mb-2 text-truncate-2" title="{{ $product->getTranslation('name') }}">
                                         {{ $product->getTranslation('name') }}

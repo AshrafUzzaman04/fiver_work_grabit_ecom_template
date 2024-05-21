@@ -231,7 +231,7 @@ if (!function_exists('format_price')) {
         }
 
 
-        // Minimize the price 
+        // Minimize the price
         if ($isMinimize) {
             $temp = number_format($price / 1000000000, get_setting('no_of_decimals'), ".", "");
 
@@ -320,7 +320,7 @@ if (!function_exists('cart_product_price')) {
             $price = $product->bids->max('amount');
         }
 
-        //calculation of taxes 
+        //calculation of taxes
         if ($tax) {
             $taxAmount = 0;
             foreach ($product->taxes as $product_tax) {
@@ -371,7 +371,7 @@ if (!function_exists('cart_product_tax')) {
             }
         }
 
-        //calculation of taxes 
+        //calculation of taxes
         $tax = 0;
         foreach ($product->taxes as $product_tax) {
             if ($product_tax->tax_type == 'percent') {
@@ -933,12 +933,12 @@ function getShippingCost($carts, $index, $carrier = '')
     } elseif ($shipping_type == 'area_wise_shipping') {
         if(auth()->user() != null){
             $shipping_info = Address::where('id', $carts[0]['address_id'])->first();
-            $city = City::where('id', $shipping_info->city_id)->first();  
+            $city = City::where('id', $shipping_info->city_id)->first();
         }
         else {
-            $city = City::where('id', Session::get('guest_shipping_info')['city_id'])->first();  
+            $city = City::where('id', Session::get('guest_shipping_info')['city_id'])->first();
         }
-        
+
         if ($city != null) {
             if ($product->added_by == 'admin') {
                 return $city->cost / count($admin_products);
@@ -948,7 +948,7 @@ function getShippingCost($carts, $index, $carrier = '')
         }
         return 0;
     } elseif ($shipping_type == 'carrier_wise_shipping') { // carrier wise shipping
-        $user_zone = auth()->user() != null ? 
+        $user_zone = auth()->user() != null ?
                     Address::where('id', $carts[0]['address_id'])->first()->country->zone_id :
                     Country::where('id', Session::get('guest_shipping_info')['country_id'])->first()->zone_id;
 
@@ -1176,13 +1176,13 @@ if (!function_exists('uploaded_asset')) {
     function uploaded_asset($id)
     {
         if (($asset = Upload::find($id)) != null) {
-            return $asset->external_link == null ? my_asset($asset->file_name) : $asset->external_link;
+            return $asset->external_link == null ? asset($asset->file_name) : $asset->external_link;
         }
-        return static_asset('assets/img/placeholder.jpg');
+        return asset('assets/img/placeholder.jpg');
     }
 }
 
-if (!function_exists('my_asset')) {
+if (!function_exists('asset')) {
     /**
      * Generate an asset path for the application.
      *
@@ -1190,7 +1190,7 @@ if (!function_exists('my_asset')) {
      * @param bool|null $secure
      * @return string
      */
-    function my_asset($path, $secure = null)
+    function asset($path, $secure = null)
     {
         if (config('filesystems.default') != 'local') {
             return Storage::disk(config('filesystems.default'))->url($path);
@@ -1200,7 +1200,7 @@ if (!function_exists('my_asset')) {
     }
 }
 
-if (!function_exists('static_asset')) {
+if (!function_exists('asset')) {
     /**
      * Generate an asset path for the application.
      *
@@ -1208,7 +1208,7 @@ if (!function_exists('static_asset')) {
      * @param bool|null $secure
      * @return string
      */
-    function static_asset($path, $secure = null)
+    function asset($path, $secure = null)
     {
         return app('url')->asset('public/' . $path, $secure);
     }
@@ -1467,7 +1467,7 @@ if (!function_exists('product_restock')) {
             $product = $product_stock->product;
             $product->num_of_sale -= $orderDetail->quantity;
             $product->save();
-            
+
             $product_stock->qty += $orderDetail->quantity;
             $product_stock->save();
         }
@@ -1828,7 +1828,7 @@ if (!function_exists('get_related_products')) {
             $fqbProducts = filter_products(Product::whereIn('id', $fqbProductIds))->get();
         }
         elseif($productSelectionType == 'category'){
-            $fqb_product_category = $product->frequently_brought_products()->where('category_id','!=', null)->first(); 
+            $fqb_product_category = $product->frequently_brought_products()->where('category_id','!=', null)->first();
             $fqbCategoryID = $fqb_product_category != null ? $fqb_product_category->category_id : null;
             if($fqbCategoryID != null){
                 $category = Category::with('childrenCategories')->find($fqbCategoryID);
@@ -2305,9 +2305,9 @@ if (!function_exists('ifUserHasWelcomeCouponAndNotUsed')) {
 if (!function_exists('get_image')) {
     function get_image($image)
     {
-        $image_url = static_asset('assets/img/placeholder.jpg');
+        $image_url = asset('assets/img/placeholder.jpg');
         if ($image != null) {
-            $image_url = $image->external_link == null ? my_asset($image->file_name) : $image->external_link;
+            $image_url = $image->external_link == null ? asset($image->file_name) : $image->external_link;
         }
         return $image_url;
     }

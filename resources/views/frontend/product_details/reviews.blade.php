@@ -6,11 +6,11 @@
                     <!-- Review User Image -->
                     <span class="avatar avatar-md mr-3">
                         <img class="lazyload"
-                            src="{{ static_asset('assets/img/placeholder.jpg') }}"
-                            onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';"
+                            src="{{ asset('assets/img/placeholder.jpg') }}"
+                            onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';"
                             @if ($review->user->avatar_original != null) data-src="{{ uploaded_asset($review->user->avatar_original) }}"
                         @else
-                            data-src="{{ static_asset('assets/img/placeholder.jpg') }}" @endif>
+                            data-src="{{ asset('assets/img/placeholder.jpg') }}" @endif>
                     </span>
                     <div class="media-body text-left">
                         <!-- Review User Name -->
@@ -39,9 +39,9 @@
                                 @foreach (explode(',', $review->photos) as $photo)
                                 <a class="spotlight mr-2 mr-md-3 mb-2 mb-md-3 size-60px size-md-90px border overflow-hidden has-transition hov-scale-img hov-border-primary" href="{{ uploaded_asset($photo) }}">
                                     <img class="img-fit h-100 lazyload has-transition"
-                                            src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                            src="{{ asset('assets/img/placeholder.jpg') }}"
                                             data-src="{{ uploaded_asset($photo) }}"
-                                            onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                            onerror="this.onerror=null;this.src='{{ asset('assets/img/placeholder.jpg') }}';">
                                 </a>
                                 @endforeach
                             @endif
@@ -64,7 +64,7 @@
             {{ translate('There have been no reviews for this product yet.') }}
         </div>
     @endif
-    
+
     <!-- Pagination -->
     <div class="aiz-pagination product-reviews-pagination py-2 px-4 d-flex justify-content-end">
         {{ $reviews->links() }}
